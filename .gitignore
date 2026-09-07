@@ -1,0 +1,49 @@
+# Composer ignores
+vendor
+composer.phar
+auth.json
+
+# Framework ignores
+.env
+.env.*.php
+.env.php
+selenium.php
+/bootstrap/compiled.php
+.phpunit.result.cache
+
+# Core framework (installed/updated via Composer)
+modules
+
+# Hosting ignores
+php_errors.log
+nginx-error.log
+nginx-access.log
+nginx-ssl.access.log
+nginx-ssl.error.log
+sftp-config.json
+.ftpconfig
+
+# Editor ignores
+nbproject
+.idea
+.vscode
+!.devcontainer/.vscode
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+.zed
+
+# Other ignores
+.DS_Store
+Thumbs.db
+package-lock.json
+.phpunit.cache
+node_modules
+
+# Ignore generated public directory from `winter:mirror public`
+public
+
+# Custom
+.htaccess
+storage
+plugins/*
