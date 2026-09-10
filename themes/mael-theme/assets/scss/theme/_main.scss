@@ -17,6 +17,8 @@ $color-surface: #F5EFE6;
 $color-bg: #FAFAF8;
 $color-white: #FFFFFF;
 $color-muted-light: #A08060;
+$color-text-dark: #3D2C1E;
+$color-timeline-line: #D4C4A8;
 
 $overlay-dark: rgba(28, 18, 9, 0.72);
 $overlay-dark-soft: rgba(28, 18, 9, 0.1);
@@ -786,4 +788,346 @@ body {
     padding: 22px 0;
     font-size: 12px;
     color: rgba(245, 239, 230, 0.3);
+}
+
+// =============================================================
+// Page hero (interior page banner — About, Catalog, Contact…)
+// =============================================================
+.pagehero-area {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    background-color: $color-dark;
+}
+
+.pagehero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    opacity: 0.45;
+}
+
+.pagehero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(28, 18, 9, 0.75) 0%, rgba(28, 18, 9, 0.2) 100%);
+}
+
+.pagehero-area .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pagehero-content {
+    max-width: 600px;
+}
+
+.pagehero-label {
+    margin-bottom: 16px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-accent;
+}
+
+.pagehero-title {
+    margin: 0;
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    color: $color-white;
+
+    em {
+        font-style: italic;
+        color: $color-accent;
+    }
+}
+
+// =============================================================
+// Text introduction (two-column)
+// =============================================================
+.textintro-area {
+    padding: 72px 0;
+}
+
+.textintro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.textintro-lead {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: $color-text-dark;
+}
+
+.textintro-text {
+    margin: 0;
+    padding-top: 6px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: $color-text-muted;
+}
+
+// =============================================================
+// Values (numbered principles)
+// =============================================================
+.values-area {
+    padding: 72px 0;
+    background-color: $color-surface;
+}
+
+.values-header {
+    margin-bottom: 48px;
+}
+
+.values-label {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-primary;
+}
+
+.values-title {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: $color-dark;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.values-item {
+    padding: 40px 32px;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+}
+
+.values-number {
+    margin-bottom: 16px;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: $color-border;
+}
+
+.values-item-title {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 400;
+    color: $color-dark;
+}
+
+.values-item-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: $color-text-muted;
+}
+
+// =============================================================
+// Timeline
+// =============================================================
+.timeline-area {
+    padding: 88px 0;
+}
+
+.timeline-label {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-primary;
+}
+
+.timeline-title {
+    margin: 0 0 56px;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: $color-dark;
+}
+
+.timeline-list {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 88px;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: $color-timeline-line;
+    }
+}
+
+.timeline-item {
+    display: flex;
+    gap: 48px;
+    padding-bottom: 44px;
+    margin-bottom: 44px;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+.timeline-year-col {
+    position: relative;
+    flex-shrink: 0;
+    width: 88px;
+    padding-right: 24px;
+    text-align: right;
+}
+
+.timeline-dot {
+    position: absolute;
+    right: -5px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    box-shadow: 0 0 0 3px $color-bg, 0 0 0 4px $color-timeline-line;
+}
+
+.timeline-year {
+    font-size: 17px;
+    font-weight: 300;
+    color: $color-primary;
+}
+
+.timeline-body {
+    padding-top: 2px;
+}
+
+.timeline-item-title {
+    margin: 0 0 8px;
+    font-size: 19px;
+    font-weight: 400;
+    color: $color-dark;
+}
+
+.timeline-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: $color-text-muted;
+}
+
+// =============================================================
+// Team
+// =============================================================
+.team-area {
+    padding: 88px 0;
+    background-color: $color-surface;
+}
+
+.team-header {
+    margin-bottom: 48px;
+}
+
+.team-label {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-primary;
+}
+
+.team-title {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: $color-dark;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.team-photo {
+    margin-bottom: 20px;
+    aspect-ratio: 4 / 5;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: $color-timeline-line;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.05);
+    }
+}
+
+.team-name {
+    margin-bottom: 4px;
+    font-size: 20px;
+    font-weight: 400;
+    color: $color-dark;
+}
+
+.team-role {
+    margin-bottom: 10px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: $color-primary;
+}
+
+.team-bio {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: $color-text-muted;
+}
+
+// =============================================================
+// Simple CTA (light background, single button)
+// =============================================================
+.ctasimple-area {
+    padding: 88px 0;
+    background-color: $color-white;
+    border-top: 1px solid $color-border;
+    text-align: center;
+}
+
+.ctasimple-title {
+    margin: 0 0 16px;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    color: $color-dark;
+}
+
+.ctasimple-text {
+    max-width: 440px;
+    margin: 0 auto 36px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: $color-text-muted;
 }

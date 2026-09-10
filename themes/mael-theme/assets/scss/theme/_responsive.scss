@@ -51,6 +51,31 @@
 	.photogallery-area .photogallery-grid {
 		grid-template-columns: 1fr;
 	}
+
+	.textintro-grid {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+
+	.values-area .values-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.team-area .team-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.timeline-list::before {
+		display: none;
+	}
+
+	.timeline-year-col {
+		width: 60px;
+
+		.timeline-year {
+			font-size: 14px;
+		}
+	}
 }
 
 @media (max-width: 900px) {

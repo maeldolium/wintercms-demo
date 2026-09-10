@@ -1,0 +1,16 @@
+description = "Text Introduction Section"
+
+[viewBag]
+==
+<section class="textintro-area">
+    <div class="container">
+        <div class="textintro-grid">
+            {% if data.section_textintro_text_1 %}
+                <p class="textintro-lead">{{ data.section_textintro_text_1 }}</p>
+            {% endif %}
+            {% if data.section_textintro_text_2 %}
+                <p class="textintro-text">{{ data.section_textintro_text_2 }}</p>
+            {% endif %}
+        </div>
+    </div>
+</section>

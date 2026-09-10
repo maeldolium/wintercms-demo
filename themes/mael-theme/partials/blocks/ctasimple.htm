@@ -1,0 +1,17 @@
+description = "Simple CTA Section"
+
+[viewBag]
+==
+<section class="ctasimple-area">
+    <div class="container">
+        <div class="ctasimple-content">
+            <h3 class="ctasimple-title font-display">{{ data.section_ctasimple_title }}</h3>
+            {% if data.section_ctasimple_text %}
+                <p class="ctasimple-text">{{ data.section_ctasimple_text }}</p>
+            {% endif %}
+            {% if data.section_ctasimple_button_text %}
+                <a href="{{ data.section_ctasimple_button_url }}" class="btn btn-primary">{{ data.section_ctasimple_button_text }}</a>
+            {% endif %}
+        </div>
+    </div>
+</section>

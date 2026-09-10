@@ -1,0 +1,25 @@
+description = "Values Section"
+
+[viewBag]
+==
+<section class="values-area">
+    <div class="container">
+        <div class="values-header">
+            {% if data.section_values_label %}
+                <div class="values-label">{{ data.section_values_label }}</div>
+            {% endif %}
+            <h2 class="values-title font-display">{{ data.section_values_title }}</h2>
+        </div>
+        <div class="values-grid">
+            {% for fields in data.section_values %}
+                <div class="values-item">
+                    {% if fields.section_values_number %}
+                        <div class="values-number font-display">{{ fields.section_values_number }}</div>
+                    {% endif %}
+                    <h3 class="values-item-title font-display">{{ fields.section_values_title }}</h3>
+                    <p class="values-item-text">{{ fields.section_values_text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -229,3 +229,186 @@ ctabanner:
             label: URL du bouton
             type: text
             span: right
+
+pagehero:
+  name: En-tête de page
+  description: Page Hero Section
+  icon: icon-picture
+  fields:
+    section_pagehero_section:
+      label: En-tête de page Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_pagehero_image:
+      label: Image de fond
+      type: mediafinder
+      mode: image
+      span: left
+    section_pagehero_label:
+      label: Label
+      type: text
+      span: right
+    section_pagehero_title:
+      label: "Titre (le HTML est autorisé, ex. <br>, <em>...</em>)"
+      type: text
+      span: full
+
+textintro:
+  name: Introduction
+  description: Text Introduction Section
+  icon: icon-paragraph
+  fields:
+    section_textintro_section:
+      label: Introduction Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_textintro_text_1:
+      label: Paragraphe principal
+      type: textarea
+      size: small
+      span: full
+    section_textintro_text_2:
+      label: Paragraphe secondaire
+      type: textarea
+      size: small
+      span: full
+
+values:
+  name: Valeurs
+  description: Values Section
+  icon: icon-check
+  fields:
+    section_values_section:
+      label: Valeurs Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_values_label:
+      label: Label
+      type: text
+      span: left
+    section_values_title:
+      label: Titre
+      type: text
+      span: right
+    section_values:
+      type: repeater
+      prompt: Ajouter une valeur
+      form:
+        fields:
+          section_values_number:
+            label: Numéro (ex. 01)
+            type: text
+            span: left
+          section_values_title:
+            label: Titre
+            type: text
+            span: right
+          section_values_text:
+            label: Description
+            type: textarea
+            size: small
+            span: full
+
+timeline:
+  name: Chronologie
+  description: Timeline Section
+  icon: icon-clock
+  fields:
+    section_timeline_section:
+      label: Chronologie Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_timeline_label:
+      label: Label
+      type: text
+      span: left
+    section_timeline_title:
+      label: Titre
+      type: text
+      span: right
+    section_timeline:
+      type: repeater
+      prompt: Ajouter un évènement
+      form:
+        fields:
+          section_timeline_year:
+            label: Année
+            type: text
+            span: left
+          section_timeline_title:
+            label: Titre
+            type: text
+            span: right
+          section_timeline_text:
+            label: Description
+            type: textarea
+            size: small
+            span: full
+
+team:
+  name: Équipe
+  description: Team Section
+  icon: icon-users
+  fields:
+    section_team_section:
+      label: Équipe Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_team_label:
+      label: Label
+      type: text
+      span: left
+    section_team_title:
+      label: Titre
+      type: text
+      span: right
+    section_team:
+      type: repeater
+      prompt: Ajouter un membre
+      form:
+        fields:
+          section_team_photo:
+            label: Photo
+            type: mediafinder
+            mode: image
+            span: left
+          section_team_name:
+            label: Nom
+            type: text
+            span: right
+          section_team_role:
+            label: Rôle
+            type: text
+            span: right
+          section_team_bio:
+            label: Bio
+            type: textarea
+            size: small
+            span: full
+
+ctasimple:
+  name: Bannière CTA simple
+  description: Simple CTA Section
+  icon: icon-bullhorn
+  fields:
+    section_ctasimple_section:
+      label: Bannière CTA simple Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_ctasimple_title:
+      label: Titre
+      type: text
+      span: full
+    section_ctasimple_text:
+      label: Texte
+      type: textarea
+      size: small
+      span: full
+    section_ctasimple_button_text:
+      label: Texte du bouton
+      type: text
+      span: left
+    section_ctasimple_button_url:
+      label: URL du bouton
+      type: text
+      span: right

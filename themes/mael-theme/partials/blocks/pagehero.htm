@@ -1,0 +1,16 @@
+description = "Page Hero Section"
+
+[viewBag]
+==
+<section class="pagehero-area">
+    <img class="pagehero-image" src="{{ data.section_pagehero_image | media }}" alt="{{ data.section_pagehero_label }}">
+    <div class="pagehero-overlay"></div>
+    <div class="container">
+        <div class="pagehero-content">
+            {% if data.section_pagehero_label %}
+                <div class="pagehero-label">{{ data.section_pagehero_label }}</div>
+            {% endif %}
+            <h1 class="pagehero-title font-display">{{ data.section_pagehero_title | raw }}</h1>
+        </div>
+    </div>
+</section>
