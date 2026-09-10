@@ -1,43 +1,63 @@
-description = "Default layout"
+description = "Default Layout"
+
+[session]
+security = "all"
+
+[contactForm]
+loadJS = 1
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "search-results.htm"
+
+[mailSignup]
+
+[localePicker]
+forceUrl = 0
 ==
 <!DOCTYPE html>
-<html>
+<html lang="{{ this.theme.site_locale }}">
     <head>
-        <meta charset="utf-8">
-        <title>Winter CMS - {{ this.page.title }}</title>
-        <meta name="description" content="{{ this.page.meta_description }}">
-        <meta name="title" content="{{ this.page.meta_title }}">
-        <meta name="author" content="Winter CMS">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="generator" content="Winter CMS">
-        <link rel="icon" type="image/png" href="{{ 'assets/images/winter.png'|theme }}">
-        <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
-        <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
-        {% styles %}
-    </head>
-    <body>
+		<!--Meta Data -->
+        {% partial "site/meta" %}
+		<!--Css -->
+        {% partial "site/css" %}
+		
+    </head><!--/#head-->
+    <body class="page-{{ this.page.id }} layout-{{ this.page.layout }}">
+    
+        <!--Google Analytics -->
+        {{ this.theme.google_analytics|raw }}
 
-        <!-- Header -->
-        <header id="layout-header">
-            {% partial 'site/header' %}
-        </header>
+        <header id="header-wrap" class="header">
+            {% partial "site/top" %}
+            {% partial "site/nav" %}
+        </header><!--/#header-->
+    
+        <!--Page header-->
+        {% partial "site/page-header" %}
+        
+        {% page %}
+    
+        <!--Blog partials-->
 
-        <!-- Content -->
-        <section id="layout-content">
-            {% page %}
-        </section>
-
-        <!-- Footer -->
-        <footer id="layout-footer">
-            {% partial 'site/footer' %}
-        </footer>
-
+        <footer>
+        	{% partial "site/footer" %}
+        </footer><!--/#footer-->
+    
+        <!-- Copyright -->
+        {% partial "site/copyright" %}
+    
+        <!-- Scroll to top -->
+        {% partial "site/scrolltop" %}
+        
+        <!-- Loader -->
+        {% partial "site/loader" %}
+    
         <!-- Scripts -->
-        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
-        <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
-        <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
-        {% snowboard all %}
-        {% scripts %}
+        {% partial "site/scripts" %}
 
-    </body>
+</body><!--/#body-->
 </html>

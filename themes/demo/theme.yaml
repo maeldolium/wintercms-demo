@@ -1,5 +1,18 @@
-name: Demo
-description: 'Demo Winter CMS theme. Demonstrates the basic concepts of the front-end theming: layouts, pages, partials, components, content blocks, AJAX framework.'
-author: Winter CMS
-homepage: 'https://wintercms.com'
-code: ''
+name: "Clear"
+description: "Clear - CRUD Generator Modular Octobercms Theme"
+author: Charis Ketikidis
+homepage: "https://www.ketikidis.com"
+code: clear
+authorCode: Ketikidis
+form: config/fields.yaml
+require:
+    - Rainlab.User
+    - Rainlab.Blog
+    - Rainlab.Pages
+    - Rainlab.Translate
+    - Rainlab.Mailchimp
+    - OFFLINE.SiteSearch
+    - Rahman.BlogTags
+    - Martin.Ssbuttons
+    - GrofGraf.ContactMe
+    - Simplicitylab.BlogFeaturedVideo
