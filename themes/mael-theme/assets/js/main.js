@@ -10,6 +10,14 @@
     });
 
 
+	var $headerWrap = $('#header-wrap');
+	var toggleHeaderScrolled = function() {
+		$headerWrap.toggleClass('header-scrolled', $(window).scrollTop() > 20);
+	};
+	$(window).on('scroll resize', toggleHeaderScrolled);
+	toggleHeaderScrolled();
+
+
 /*
    Carousel Slider
    ========================================================================== */

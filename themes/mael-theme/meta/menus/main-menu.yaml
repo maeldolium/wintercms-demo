@@ -2,9 +2,11 @@ items:
     -
         title: Accueil
         nesting: 0
-        type: static-page
+        type: url
+        url: /
         code: ''
-        reference: index
+        reference: null
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -14,8 +16,10 @@ items:
         title: 'À propos'
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: a-propos
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -25,8 +29,10 @@ items:
         title: Catalogue
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: catalogue
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -36,8 +42,10 @@ items:
         title: 'Contact & Devis'
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: contact-devis
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'

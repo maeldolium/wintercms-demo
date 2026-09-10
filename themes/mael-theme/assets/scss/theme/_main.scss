@@ -79,6 +79,113 @@ body {
     }
 }
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    svg {
+        flex-shrink: 0;
+    }
+}
+
+.navbar-brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 34px;
+    text-align: left;
+
+    .font-display {
+        font-size: 18px !important;
+        line-height: 1;
+        letter-spacing: 0.01em;
+        color: #1C1209;
+        transition: color 0.3s ease;
+    }
+
+    .font-display-subtitle {
+        font-size: 13.5px !important;
+        line-height: 1;
+        letter-spacing: 0.18em;
+        color: #8B5E3C;
+        text-transform: uppercase;
+        margin-top: 3px;
+        transition: color 0.3s ease;
+    }
+}
+
+// =============================================================
+// Header / navbar background
+// =============================================================
+#header-wrap {
+    position: relative;
+    z-index: 10;
+    background-color: $color-bg;
+    transition: background-color 0.3s ease;
+
+    .navbar-nav .nav-link {
+        color: #6B5A4A;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-item.active .nav-link {
+        color: $color-primary;
+        text-decoration: underline;
+        text-decoration-color: $color-primary;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 6px;
+    }
+
+    &:has(+ .owlcarousel-area) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: transparent;
+
+        .navbar-brand-text .font-display {
+            color: $color-white;
+        }
+
+        .navbar-nav .nav-link {
+            color: $color-white;
+        }
+
+        &.header-scrolled {
+            background-color: $color-bg;
+
+            .navbar-brand-text .font-display {
+                color: $color-dark;
+            }
+
+            .navbar-nav .nav-link {
+                color: #6B5A4A;
+            }
+        }
+    }
+
+    .navbar-nav .nav-item .nav-link[href$="/contact-devis"] {
+        background-color: $color-primary;
+        color: $color-white;
+        text-decoration: none;
+        border-radius: 4px;
+        padding: 10px 24px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        &:hover,
+        &:focus {
+            background-color: $color-primary-dark;
+            color: $color-white;
+        }
+    }
+}
+
 // =============================================================
 // Carousel Owl (hero block)
 // =============================================================
