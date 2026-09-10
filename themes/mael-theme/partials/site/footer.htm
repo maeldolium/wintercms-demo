@@ -4,17 +4,73 @@ description = "Footer"
 
 [staticMenu]
 code = "footer-main-menu"
-
-[tags]
-results = 15
-sortOrder = "created_at desc"
 ==
-{% if this.theme.layout_container %}
-<div class="{{ this.theme.layout_container }}">
-{% else %}
-<div class="container">
-    {% endif %}
-    <div class="row section">
+<div class="footer-area">
+    {% if this.theme.layout_container %}
+    <div class="{{ this.theme.layout_container }}">
+    {% else %}
+    <div class="container">
+        {% endif %}
+        <div class="footer-grid">
+            <div class="footer-widget footer-brand">
+                <a class="footer-logo" href="{{ 'index'|staticPage }}">
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                        <rect width="34" height="34" rx="4" fill="#8B5E3C"/>
+                        <path d="M7 26L13 9l4 7 4-7 6 17" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 20h14" stroke="#FFF8F0" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+                    </svg>
+                    <div class="footer-logo-text">
+                        <div class="font-display">{{ this.theme.site_name }}</div>
+                        <div class="footer-logo-subtitle">Menuiserie · Lyon</div>
+                    </div>
+                </a>
+                {% if this.theme.footer_bio %}
+                    <p class="footer-bio">{{ this.theme.footer_bio }}</p>
+                {% endif %}
+                {% if this.theme.social_media %}
+                    <div class="footer-social">
+                        {% for fields in this.theme.social_media %}
+                            <a href="{{ fields.social_media_url }}" target="_blank" rel="noopener" aria-label="{{ fields.social_media_name }}">
+                                <i class="{{ fields.social_media_icon }}" aria-hidden="true"></i>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
 
+            <div class="footer-widget">
+                <div class="footer-widget-title">Pages</div>
+                {% if staticMenu.menuItems %}
+                    <ul class="footer-nav">
+                        {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <div class="footer-widget">
+                <div class="footer-widget-title">Services</div>
+                {% if this.theme.footer_services %}
+                    <ul class="footer-list">
+                        {% for fields in this.theme.footer_services %}
+                            <li>{{ fields.footer_services_text }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <div class="footer-widget">
+                <div class="footer-widget-title">Atelier</div>
+                {% if this.theme.footer_contact %}
+                    <ul class="footer-contact">
+                        {% for fields in this.theme.footer_contact %}
+                            <li>
+                                {% if fields.footer_contact_icon %}<i class="{{ fields.footer_contact_icon }}" aria-hidden="true"></i>{% endif %}
+                                {{ fields.footer_contact_info|raw }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </div>

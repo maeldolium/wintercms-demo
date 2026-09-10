@@ -641,3 +641,149 @@ body {
         gap: 16px;
     }
 }
+
+// =============================================================
+// Footer
+// =============================================================
+.footer-area {
+    background-color: $color-dark;
+    color: #F5EFE6;
+    padding: 72px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+
+    svg {
+        flex-shrink: 0;
+    }
+}
+
+.footer-logo-text {
+    .font-display {
+        font-size: 18px;
+        line-height: 1;
+        color: #F5EFE6;
+    }
+}
+
+.footer-logo-subtitle {
+    margin-top: 3px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-primary;
+}
+
+.footer-bio {
+    max-width: 280px;
+    margin: 0 0 28px;
+    font-size: 13px;
+    line-height: 1.75;
+    color: rgba(245, 239, 230, 0.5);
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: rgba(245, 239, 230, 0.5);
+        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+
+        &:hover,
+        &:focus {
+            color: $color-accent;
+            border-color: rgba(212, 165, 116, 0.4);
+            background-color: rgba(212, 165, 116, 0.08);
+        }
+    }
+}
+
+.footer-widget-title {
+    margin-bottom: 20px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-primary;
+}
+
+.footer-nav,
+.footer-list,
+.footer-contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+    color: rgba(245, 239, 230, 0.55);
+}
+
+.footer-nav {
+    li,
+    span {
+        list-style: none;
+    }
+
+    a {
+        color: rgba(245, 239, 230, 0.55);
+        transition: color 0.2s ease;
+
+        &:hover,
+        &:focus {
+            color: #F5EFE6;
+        }
+    }
+}
+
+.footer-contact {
+    i {
+        margin-right: 6px;
+        color: $color-primary;
+    }
+
+    a {
+        color: rgba(245, 239, 230, 0.55);
+        transition: color 0.2s ease;
+
+        &:hover,
+        &:focus {
+            color: #F5EFE6;
+        }
+    }
+}
+
+#copyright {
+    background-color: $color-dark;
+}
+
+.copyright-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 22px 0;
+    font-size: 12px;
+    color: rgba(245, 239, 230, 0.3);
+}

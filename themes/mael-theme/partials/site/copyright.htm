@@ -8,8 +8,9 @@ description = "Copyright"
 {% else %}
 <div class="container">
     {% endif %}
-    <div class="row">
-
+    <div class="copyright-bar">
+        <span>&copy; {{ "now"|date("Y") }} {{ this.theme.site_name }}. Tous droits réservés.</span>
+        <span>Fabriqué avec soin à Lyon, France.</span>
     </div>
 </div>
 </div>

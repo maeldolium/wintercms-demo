@@ -487,6 +487,27 @@ tabs:
             size: small
             span: right
 
+        footer_bio:
+            tab: Footer
+            label: Brand Bio
+            type: textarea
+            size: small
+            span: full
+            default: "Mobilier artisanal et menuiserie sur mesure fabriqués avec patience, tradition et les meilleurs bois français."
+
+        footer_services:
+            tab: Footer
+            label: Services List
+            type: repeater
+            prompt: Add Service
+            span: right
+            form:
+                fields:
+                    footer_services_text:
+                        label: Service
+                        type: text
+                        span: full
+
         ####################################################
         # Tab: Addons
         ####################################################
