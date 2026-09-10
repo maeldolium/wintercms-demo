@@ -13,7 +13,7 @@
 /*
    Carousel Slider
    ========================================================================== */
-	var owl = $("#owlcarousel-area");
+	var owl = $("#owl-carousel");
 	owl.owlCarousel({
 		animateOut: 'fadeOut',
 		loop: true,

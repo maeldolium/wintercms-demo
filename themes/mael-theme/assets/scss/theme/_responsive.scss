@@ -1,0 +1,37 @@
+// =============================================================
+// Responsive overrides
+// =============================================================
+
+@media (max-width: 768px) {
+	.owlcarousel-area {
+		height: 100vh;
+		min-height: 480px;
+
+		.owl-carousel .owlcarousel-caption {
+			left: 24px;
+			right: 24px;
+			max-width: none;
+
+			.owlcarousel-title {
+				margin-bottom: 12px;
+			}
+
+			.owlcarousel-subtitle {
+				margin-bottom: 24px;
+			}
+		}
+
+		.owl-theme .owl-nav [class*='owl-'] {
+			width: 36px;
+			height: 36px;
+		}
+
+		.owl-theme .owl-nav .owl-prev {
+			left: 12px;
+		}
+
+		.owl-theme .owl-nav .owl-next {
+			right: 12px;
+		}
+	}
+}

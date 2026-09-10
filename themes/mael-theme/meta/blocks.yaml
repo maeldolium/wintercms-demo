@@ -13,7 +13,7 @@ carouselowl:
       form:
         fields:
           section_carouselowl_type:
-            label: Type Slide
+            label: Slide Type
             type: balloon-selector
             span: left
             options:
@@ -23,20 +23,23 @@ carouselowl:
             label: Image
             type: mediafinder
             mode: image
-            span: right
+            span: left
             trigger:
               action: show
               field: section_carouselowl_type
-              condition: owlimage
+              condition: value[owlimage]
           section_carouselowl_type_video:
             label: Video
-            type: mediafinder
-            mode: file
-            span: right
+            type: text
+            span: full
             trigger:
               action: show
               field: section_carouselowl_type
-              condition: owlvideo
+              condition: value[owlvideo]
+          section_carouselowl_label:
+            label: Label
+            type: text
+            span: left
           section_carouselowl_title:
             label: Titre
             type: text
@@ -45,11 +48,16 @@ carouselowl:
             label: Sous-titre
             type: text
             span: right
-          section_carouselowl_button_label:
-            label: Label Bouton
-            type: text
-            span: left
-          section_carouselowl_button_url:
-            label: URL Bouton
-            type: text
-            span: right
+          section_carouselowl_buttons:
+            type: repeater
+            prompt: Ajouter un bouton
+            form:
+              fields:
+                section_carouselowl_button_text:
+                  label: Texte du bouton
+                  type: text
+                  span: left
+                section_carouselowl_button_url:
+                  label: URL du bouton
+                  type: text
+                  span: right

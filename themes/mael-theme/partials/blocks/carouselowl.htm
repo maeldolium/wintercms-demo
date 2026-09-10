@@ -1,6 +1,6 @@
 description = "Carousel Owl Section"
 
-[viewbag]
+[viewBag]
 ==
 <div class="owlcarousel-area">
     <div class="owl-carousel owl-theme" id="owl-carousel">
@@ -13,10 +13,17 @@ description = "Carousel Owl Section"
                         <source src="{{ fields.section_carouselowl_type_video | media }}" type="video/mp4">
                     </video>
                 {% endif %}
-                <div class="carousel-caption">
-                    <h1 class="carousel-title">{{ fields.section_carouselowl_title }}</h1>
-                    <p class="carousel-subtitle">{{ fields.section_carouselowl_subtitle }}</p>
-                    <a href="{{ fields.section_carouselowl_button_url }}" class="btn btn-primary">{{ fields.section_carouselowl_button_label }}</a>
+                <div class="owlcarousel-caption">
+                    <p class="owlcarousel-label">{{ fields.section_carouselowl_label }}</p>
+                    <h1 class="owlcarousel-title">{{ fields.section_carouselowl_title }}</h1>
+                    <p class="owlcarousel-subtitle">{{ fields.section_carouselowl_subtitle }}</p>
+                        {% if fields.section_carouselowl_buttons %}
+                            <div class="owlcarousel-cta">
+                                {% for button in fields.section_carouselowl_buttons %}
+                                    <a href="{{ button.section_carouselowl_button_url }}" class="btn btn-primary">{{ button.section_carouselowl_button_text }}</a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                 </div>
             </div>
         {% endfor %}

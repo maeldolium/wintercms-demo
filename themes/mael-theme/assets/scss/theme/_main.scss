@@ -1,0 +1,237 @@
+// =============================================================
+// Atelier Dumont — Design tokens
+// Palette & typography extracted from the Figma reference.
+// =============================================================
+
+$font_0: $first_font;
+$font_1: $second_font;
+
+$color-dark: #1C1209;
+$color-primary: #8B5E3C;
+$color-primary-dark: #6E4A2E;
+$color-accent: #D4A574;
+$color-text: #5C4A38;
+$color-text-muted: #8B7560;
+$color-border: #EDE8DF;
+$color-surface: #F5EFE6;
+$color-bg: #FAFAF8;
+$color-white: #FFFFFF;
+
+$overlay-dark: rgba(28, 18, 9, 0.72);
+$overlay-dark-soft: rgba(28, 18, 9, 0.1);
+
+.font-display {
+    font-family: $font_0;
+}
+
+body {
+    background-color: $color-bg;
+    font-family: $font_1;
+    color: $color-text;
+}
+
+// =============================================================
+// Buttons (shared across blocks)
+// =============================================================
+.btn.btn-primary {
+    display: inline-block;
+    background-color: $color-primary;
+    border: 1.5px solid $color-primary;
+    color: $color-white;
+    padding: 14px 32px;
+    font-family: $font_1;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    border-radius: 4px;
+    text-transform: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+
+    &:hover,
+    &:focus {
+        background-color: $color-primary-dark;
+        border-color: $color-primary-dark;
+        color: $color-white;
+        transform: translateY(-2px);
+    }
+}
+
+.btn.btn-outline-light {
+    display: inline-block;
+    background-color: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    color: $color-white;
+    padding: 14px 32px;
+    font-family: $font_1;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    border-radius: 4px;
+    text-transform: none;
+    transition: border-color 0.2s ease, transform 0.15s ease;
+
+    &:hover,
+    &:focus {
+        border-color: $color-white;
+        color: $color-white;
+        transform: translateY(-2px);
+    }
+}
+
+// =============================================================
+// Carousel Owl (hero block)
+// =============================================================
+.owlcarousel-area {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 600px;
+
+    .owl-carousel,
+    .owl-stage-outer,
+    .owl-stage,
+    .owl-item,
+    .item {
+        height: 100%;
+    }
+
+    .owl-carousel {
+        .item {
+            position: relative;
+
+            img,
+            video {
+                width: 100%;
+                height: 100vh;
+                min-height: 600px;
+                object-fit: cover;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to right, $overlay-dark 0%, rgba(28, 18, 9, 0.3) 60%, $overlay-dark-soft 100%);
+            }
+        }
+
+        .owlcarousel-caption {
+            position: absolute;
+            top: 50%;
+            left: clamp(24px, 6vw, 100px);
+            transform: translateY(-50%);
+            max-width: 620px;
+            right: auto;
+            bottom: auto;
+            text-align: left;
+            padding: 0;
+
+            .owlcarousel-label {
+                display: inline-block;
+                margin: 0 0 16px;
+                font-family: $font_1;
+                font-size: 11px;
+                font-weight: 400;
+                line-height: 1;
+                color: $color-accent;
+                text-transform: uppercase;
+                letter-spacing: 0.22em;
+                border-left: 2px solid $color-primary;
+                padding-left: 12px;
+            }
+
+            .owlcarousel-title {
+                margin: 0 0 16px;
+                font-family: $font_0;
+                font-size: clamp(3rem, 7vw, 6rem);
+                font-weight: 300;
+                color: $color-white;
+                line-height: 1;
+            }
+
+            .owlcarousel-subtitle {
+                margin: 0 0 32px;
+                font-family: $font_1;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.75);
+                line-height: 1.5;
+            }
+
+            .owlcarousel-cta {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 16px;
+                margin: 0;
+            }
+        }
+    }
+
+    .owl-theme .owl-dots {
+        position: absolute;
+        bottom: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+
+        .owl-dot {
+            span {
+                width: 8px;
+                height: 8px;
+                margin: 0;
+                background-color: rgba(255, 255, 255, 0.45);
+                border-radius: 4px;
+                transition: width 0.35s ease, background-color 0.3s ease;
+            }
+
+            &.active span,
+            &:hover span {
+                width: 32px;
+                background-color: $color-primary;
+            }
+        }
+    }
+
+    .owl-theme .owl-nav {
+        margin: 0;
+
+        [class*='owl-'] {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            color: $color-white;
+            backdrop-filter: blur(4px);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+
+            &:hover {
+                background-color: rgba(139, 94, 60, 0.7);
+                border-color: $color-primary;
+                color: $color-white;
+            }
+
+            i {
+                font-size: 18px;
+            }
+        }
+
+        .owl-prev {
+            left: 24px;
+        }
+
+        .owl-next {
+            right: 24px;
+        }
+    }
+}
