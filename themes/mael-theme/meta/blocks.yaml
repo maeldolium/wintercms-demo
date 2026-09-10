@@ -1,0 +1,55 @@
+carouselowl:
+  name: Carousel Owl
+  description: Carousel Owl
+  icon: icon-camera
+  fields:
+    section_carouselowl_section:
+      label: Carousel Owl Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_carouselowl:
+      type: repeater
+      prompt: Ajouter une slide
+      form:
+        fields:
+          section_carouselowl_type:
+            label: Type Slide
+            type: balloon-selector
+            span: left
+            options:
+              owlimage: Image
+              owlvideo: Video
+          section_carouselowl_type_image:
+            label: Image
+            type: mediafinder
+            mode: image
+            span: right
+            trigger:
+              action: show
+              field: section_carouselowl_type
+              condition: owlimage
+          section_carouselowl_type_video:
+            label: Video
+            type: mediafinder
+            mode: file
+            span: right
+            trigger:
+              action: show
+              field: section_carouselowl_type
+              condition: owlvideo
+          section_carouselowl_title:
+            label: Titre
+            type: text
+            span: left
+          section_carouselowl_subtitle:
+            label: Sous-titre
+            type: text
+            span: right
+          section_carouselowl_button_label:
+            label: Label Bouton
+            type: text
+            span: left
+          section_carouselowl_button_url:
+            label: URL Bouton
+            type: text
+            span: right

@@ -1,0 +1,58 @@
+description = "Main Menu"
+
+[viewBag]
+
+[staticMenu]
+code = "main-menu"
+==
+{% import _self as nav %}
+{% macro render_menu(items) %}
+{% import _self as nav %}
+{% for item in items %}
+{% if item.items %}
+<li role="presentation" class="nav-item dropdown {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'active' }} {{ item.viewBag.cssClass }}">
+    <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ item.title }}</a>
+    <ul class="dropdown-menu">
+        {{ nav.render_menu(item.items) }}
+    </ul>
+</li>
+{% else %}
+<li role="presentation" class="nav-item {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'active' }} {{ item.viewBag.cssClass }}">
+    <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link">{{ item.title }}</a>
+</li>
+{% endif %}
+{% endfor %}
+{% endmacro %}
+<nav class="navbar navbar-expand-md mainmenu-area" {% if this.theme.stickymenu_js %}data-toggle="sticky-onscroll"{% endif %}>
+{% if this.theme.layout_container %}
+<div class="{{ this.theme.layout_container }}">
+{% else %}
+<div class="container">
+    {% endif %}
+    <a class="navbar-brand" href="{{ 'index'|staticPage }}">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+            <rect width="34" height="34" rx="4" fill="#8B5E3C"/>
+            <path d="M7 26L13 9l4 7 4-7 6 17" stroke="#FFF8F0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M10 20h14" stroke="#FFF8F0" strokeWidth="1.4" strokeLinecap="round" opacity="0.6"/>
+          </svg>
+          <div class="navbar-brand-text">
+            <div className="font-display"}>
+              Atelier Dumont
+            </div>
+            <div classname="font-display-subtitle">
+              Menuiserie · Lyon
+            </div>
+          </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="lnr lnr-menu"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="main-menu">
+        {% if staticMenu.menuItems %}
+        <ul class="navbar-nav mr-auto w-100 justify-content-end">
+            {{ nav.render_menu(staticMenu.menuItems) }}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+</nav>

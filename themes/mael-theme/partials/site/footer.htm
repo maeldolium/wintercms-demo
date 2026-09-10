@@ -1,0 +1,20 @@
+description = "Footer"
+
+[viewBag]
+
+[staticMenu]
+code = "footer-main-menu"
+
+[tags]
+results = 15
+sortOrder = "created_at desc"
+==
+{% if this.theme.layout_container %}
+<div class="{{ this.theme.layout_container }}">
+{% else %}
+<div class="container">
+    {% endif %}
+    <div class="row section">
+
+    </div>
+</div>

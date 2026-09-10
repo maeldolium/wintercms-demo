@@ -1,0 +1,7 @@
+static-pages:
+    index: {  }
+    a-propos: {  }
+    catalogue: {  }
+    contact-devis: {  }
+    mentions-legales: {  }
+    politique-cookies: {  }

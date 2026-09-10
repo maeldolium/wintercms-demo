@@ -1,0 +1,24 @@
+description = "Carousel Owl Section"
+
+[viewbag]
+==
+<div class="owlcarousel-area">
+    <div class="owl-carousel owl-theme" id="owl-carousel">
+        {% for fields in data.section_carouselowl %}
+            <div class="item">
+                {% if fields.section_carouselowl_type == 'owlimage' %}
+                    <img src="{{ fields.section_carouselowl_type_image | media }}" alt="{{ fields.section_carouselowl_title }}">
+                {% elseif fields.section_carouselowl_type == 'owlvideo' %}
+                    <video width="800" height="600" controls>
+                        <source src="{{ fields.section_carouselowl_type_video | media }}" type="video/mp4">
+                    </video>
+                {% endif %}
+                <div class="carousel-caption">
+                    <h1 class="carousel-title">{{ fields.section_carouselowl_title }}</h1>
+                    <p class="carousel-subtitle">{{ fields.section_carouselowl_subtitle }}</p>
+                    <a href="{{ fields.section_carouselowl_button_url }}" class="btn btn-primary">{{ fields.section_carouselowl_button_label }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

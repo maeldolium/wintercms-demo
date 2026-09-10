@@ -1,0 +1,22 @@
+{
+	"name": "maeldolium/theme",
+	"type": "winter-theme",
+	"description": "Winter CMS theme",
+	"keywords": [
+		"winter",
+		"cms",
+		"pagebuilder",
+		"blocks",
+		"theme"
+	],
+	"license": "Mael Dolium under Regular or Extended wintercms marketplace license",
+	"authors": [
+		{
+			"name": "Maël Dolium",
+			"email": "maeldolium@gmail.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

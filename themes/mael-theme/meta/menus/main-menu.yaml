@@ -1,0 +1,46 @@
+items:
+    -
+        title: Accueil
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: index
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'À propos'
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: a-propos
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Catalogue
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: catalogue
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact & Devis'
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: contact-devis
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: main-menu

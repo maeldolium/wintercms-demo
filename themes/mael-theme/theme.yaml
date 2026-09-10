@@ -1,0 +1,17 @@
+name: "Theme"
+description: "Theme for Winter CMS"
+author: Maël Dolium
+homepage: "https://www.maeldolium.com"
+code: demo-theme
+authorCode: Dolium
+form: config/fields.yaml
+require:
+    - Rainlab.User
+    - Rainlab.Blog
+    - Rainlab.Pages
+    - Rainlab.Translate
+    - Rainlab.Mailchimp
+    - OFFLINE.SiteSearch
+    - Rahman.BlogTags
+    - Martin.Ssbuttons
+    - GrofGraf.ContactMe
