@@ -1,0 +1,15 @@
+description = "Photo Gallery Section"
+
+[viewBag]
+==
+<section class="photogallery-area">
+    <div class="container">
+        <div class="photogallery-grid">
+            {% for fields in data.section_photogallery %}
+                <div class="photogallery-item">
+                    <img src="{{ fields.section_photogallery_image | media }}" alt="{{ fields.section_photogallery_alt }}">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

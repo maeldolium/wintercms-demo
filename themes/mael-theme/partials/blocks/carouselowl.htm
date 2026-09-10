@@ -20,7 +20,7 @@ description = "Carousel Owl Section"
                         {% if fields.section_carouselowl_buttons %}
                             <div class="owlcarousel-cta">
                                 {% for button in fields.section_carouselowl_buttons %}
-                                    <a href="{{ button.section_carouselowl_button_url }}" class="btn btn-primary">{{ button.section_carouselowl_button_text }}</a>
+                                    <a href="{{ button.section_carouselowl_button_url }}" class="btn {{ loop.index == 1 ? 'btn-primary' : 'btn-outline-light' }}">{{ button.section_carouselowl_button_text }}</a>
                                 {% endfor %}
                             </div>
                         {% endif %}

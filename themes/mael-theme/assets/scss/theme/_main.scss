@@ -16,6 +16,7 @@ $color-border: #EDE8DF;
 $color-surface: #F5EFE6;
 $color-bg: #FAFAF8;
 $color-white: #FFFFFF;
+$color-muted-light: #A08060;
 
 $overlay-dark: rgba(28, 18, 9, 0.72);
 $overlay-dark-soft: rgba(28, 18, 9, 0.1);
@@ -233,5 +234,303 @@ body {
         .owl-next {
             right: 24px;
         }
+    }
+}
+
+// =============================================================
+// Stats (Chiffres clés)
+// =============================================================
+.stats-area {
+    background-color: $color-white;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+
+    .container {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .stats-item {
+        text-align: center;
+    }
+
+    .stats-value {
+        font-family: $font_0;
+        font-size: 2.4rem;
+        font-weight: 300;
+        line-height: 1;
+        color: $color-primary;
+    }
+
+    .stats-label {
+        margin-top: 8px;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: $color-muted-light;
+    }
+}
+
+// =============================================================
+// Story (Histoire)
+// =============================================================
+.story-area {
+    padding: 80px 0;
+
+    .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+    }
+
+    .story-media {
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        aspect-ratio: 4 / 5;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.04);
+        }
+    }
+
+    .story-media-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        padding: 14px 20px;
+        background-color: rgba(255, 250, 244, 0.95);
+        backdrop-filter: blur(8px);
+        border-radius: 4px;
+        border-left: 3px solid $color-primary;
+    }
+
+    .story-media-title {
+        font-family: $font_0;
+        font-size: 15px;
+        color: $color-dark;
+    }
+
+    .story-media-subtitle {
+        margin-top: 2px;
+        font-size: 12px;
+        color: $color-primary;
+    }
+
+    .story-label {
+        margin-bottom: 16px;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $color-primary;
+    }
+
+    .story-title {
+        margin: 0 0 24px;
+        font-family: $font_0;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 300;
+        line-height: 1.15;
+        color: $color-dark;
+
+        em {
+            font-style: italic;
+        }
+    }
+
+    .story-text {
+        margin: 0 0 16px;
+        font-size: 15px;
+        line-height: 1.75;
+        color: $color-text;
+
+        &.story-text-muted {
+            margin-bottom: 36px;
+            color: $color-text-muted;
+        }
+    }
+
+    .story-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: $font_1;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: $color-primary;
+        transition: gap 0.2s ease;
+
+        &:hover,
+        &:focus {
+            gap: 14px;
+            color: $color-primary;
+        }
+    }
+}
+
+// =============================================================
+// Services (Nos savoir-faire)
+// =============================================================
+.services-area {
+    padding: 80px 0;
+    background-color: $color-surface;
+
+    .services-header {
+        margin-bottom: 56px;
+        text-align: center;
+    }
+
+    .services-label {
+        margin-bottom: 12px;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $color-primary;
+    }
+
+    .services-title {
+        margin: 0;
+        font-family: $font_0;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 300;
+        color: $color-dark;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .services-item {
+        padding: 40px 32px;
+        background-color: $color-white;
+        border: 1px solid $color-border;
+        border-radius: 6px;
+        transition: box-shadow 0.25s ease;
+
+        &:hover {
+            box-shadow: 0 8px 32px rgba(139, 94, 60, 0.12);
+        }
+    }
+
+    .services-icon {
+        margin-bottom: 20px;
+        font-size: 32px;
+        color: $color-primary;
+    }
+
+    .services-item-title {
+        margin: 0 0 12px;
+        font-family: $font_0;
+        font-size: 21px;
+        font-weight: 400;
+        color: $color-dark;
+    }
+
+    .services-item-text {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.7;
+        color: $color-text-muted;
+    }
+}
+
+// =============================================================
+// Photo gallery
+// =============================================================
+.photogallery-area {
+    padding: 80px 0;
+
+    .photogallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-auto-rows: 260px;
+        gap: 12px;
+    }
+
+    .photogallery-item {
+        border-radius: 6px;
+        overflow: hidden;
+        background-color: $color-border;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// =============================================================
+// CTA banner
+// =============================================================
+.ctabanner-area {
+    padding: 100px 0;
+    background-color: $color-dark;
+
+    .ctabanner-content {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .ctabanner-label {
+        margin-bottom: 16px;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $color-accent;
+    }
+
+    .ctabanner-title {
+        margin: 0 0 20px;
+        font-family: $font_0;
+        font-size: clamp(2rem, 4vw, 3.6rem);
+        font-weight: 300;
+        line-height: 1.15;
+        color: $color-white;
+
+        em {
+            font-style: italic;
+            color: $color-accent;
+        }
+    }
+
+    .ctabanner-text {
+        max-width: 520px;
+        margin: 0 auto 48px;
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .ctabanner-cta {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
     }
 }

@@ -1,0 +1,16 @@
+description = "Stats Section"
+
+[viewBag]
+==
+<section class="stats-area">
+    <div class="container">
+        <div class="stats-grid">
+            {% for fields in data.section_stats %}
+                <div class="stats-item">
+                    <div class="stats-value">{{ fields.section_stats_value }}</div>
+                    <div class="stats-label">{{ fields.section_stats_label }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

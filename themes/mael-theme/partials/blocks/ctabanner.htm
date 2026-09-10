@@ -1,0 +1,24 @@
+description = "CTA Banner Section"
+
+[viewBag]
+==
+<section class="ctabanner-area">
+    <div class="container">
+        <div class="ctabanner-content">
+            {% if data.section_ctabanner_label %}
+                <div class="ctabanner-label">{{ data.section_ctabanner_label }}</div>
+            {% endif %}
+            <h2 class="ctabanner-title">{{ data.section_ctabanner_title | raw }}</h2>
+            {% if data.section_ctabanner_text %}
+                <p class="ctabanner-text">{{ data.section_ctabanner_text }}</p>
+            {% endif %}
+            {% if data.section_ctabanner_buttons %}
+                <div class="ctabanner-cta">
+                    {% for button in data.section_ctabanner_buttons %}
+                        <a href="{{ button.section_ctabanner_button_url }}" class="btn {{ loop.index == 1 ? 'btn-outline-light' : 'btn-primary' }}">{{ button.section_ctabanner_button_text }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

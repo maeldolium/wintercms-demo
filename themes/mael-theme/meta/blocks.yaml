@@ -61,3 +61,171 @@ carouselowl:
                   label: URL du bouton
                   type: text
                   span: right
+
+stats:
+  name: Chiffres Clés
+  description: Stats Section
+  icon: icon-bar-chart
+  fields:
+    section_stats_section:
+      label: Chiffres Clés Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_stats:
+      type: repeater
+      prompt: Ajouter un chiffre
+      form:
+        fields:
+          section_stats_value:
+            label: Valeur
+            type: text
+            span: left
+          section_stats_label:
+            label: Libellé
+            type: text
+            span: right
+
+story:
+  name: Histoire
+  description: Story Section
+  icon: icon-book-open
+  fields:
+    section_story_section:
+      label: Histoire Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_story_image:
+      label: Image
+      type: mediafinder
+      mode: image
+      span: left
+    section_story_image_title:
+      label: Titre sur l'image
+      type: text
+      span: right
+    section_story_image_subtitle:
+      label: Sous-titre sur l'image
+      type: text
+      span: right
+    section_story_label:
+      label: Label
+      type: text
+      span: left
+    section_story_title:
+      label: "Titre (le HTML est autorisé, ex. <em>...</em>)"
+      type: text
+      span: right
+    section_story_text_1:
+      label: Paragraphe 1
+      type: textarea
+      size: small
+      span: full
+    section_story_text_2:
+      label: Paragraphe 2
+      type: textarea
+      size: small
+      span: full
+    section_story_button_text:
+      label: Texte du bouton
+      type: text
+      span: left
+    section_story_button_url:
+      label: URL du bouton
+      type: text
+      span: right
+
+services:
+  name: Services
+  description: Services Section
+  icon: icon-tools
+  fields:
+    section_services_section:
+      label: Services Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_services_label:
+      label: Label
+      type: text
+      span: left
+    section_services_title:
+      label: Titre
+      type: text
+      span: right
+    section_services:
+      type: repeater
+      prompt: Ajouter un service
+      form:
+        fields:
+          section_services_icon:
+            label: Icône
+            type: iconpicker
+            span: left
+          section_services_title:
+            label: Titre
+            type: text
+            span: right
+          section_services_text:
+            label: Description
+            type: textarea
+            size: small
+            span: full
+
+photogallery:
+  name: Galerie Photo
+  description: Photo Gallery Section
+  icon: icon-picture
+  fields:
+    section_photogallery_section:
+      label: Galerie Photo Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_photogallery:
+      type: repeater
+      prompt: Ajouter une photo
+      form:
+        fields:
+          section_photogallery_image:
+            label: Image
+            type: mediafinder
+            mode: image
+            span: left
+          section_photogallery_alt:
+            label: Texte alternatif
+            type: text
+            span: right
+
+ctabanner:
+  name: Bannière CTA
+  description: CTA Banner Section
+  icon: icon-bullhorn
+  fields:
+    section_ctabanner_section:
+      label: Bannière CTA Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_ctabanner_label:
+      label: Label
+      type: text
+      span: left
+    section_ctabanner_title:
+      label: "Titre (le HTML est autorisé, ex. <em>...</em>)"
+      type: text
+      span: right
+    section_ctabanner_text:
+      label: Texte
+      type: textarea
+      size: small
+      span: full
+    section_ctabanner_buttons:
+      type: repeater
+      prompt: Ajouter un bouton
+      form:
+        fields:
+          section_ctabanner_button_text:
+            label: Texte du bouton
+            type: text
+            span: left
+          section_ctabanner_button_url:
+            label: URL du bouton
+            type: text
+            span: right

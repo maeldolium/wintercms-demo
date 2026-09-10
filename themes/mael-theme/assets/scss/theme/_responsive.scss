@@ -34,4 +34,21 @@
 			right: 12px;
 		}
 	}
+
+	.stats-area .stats-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.story-area .story-grid {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	.services-area .services-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.photogallery-area .photogallery-grid {
+		grid-template-columns: 1fr;
+	}
 }
