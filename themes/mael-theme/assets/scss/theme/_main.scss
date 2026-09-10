@@ -159,6 +159,11 @@ body {
             color: $color-white;
         }
 
+        .navbar-nav .nav-item.active .nav-link {
+            color: $color-white;
+            text-decoration-color: $color-white;
+        }
+
         &.header-scrolled {
             background-color: $color-bg;
 
@@ -168,6 +173,11 @@ body {
 
             .navbar-nav .nav-link {
                 color: #6B5A4A;
+            }
+
+            .navbar-nav .nav-item.active .nav-link {
+                color: $color-primary;
+                text-decoration-color: $color-primary;
             }
         }
     }
