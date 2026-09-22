@@ -46,4 +46,5 @@ public
 # Custom
 storage
 plugins/*
+!plugins/maeld
 themes/demo
