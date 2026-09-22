@@ -1,0 +1,19 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: Meuble
+
+form: $/maeld/catalog/models/item/fields.yaml
+
+modelClass: Maeld\Catalog\Models\Item
+
+defaultRedirect: maeld/catalog/items
+
+create:
+    redirect: maeld/catalog/items/update/:id
+    redirectClose: maeld/catalog/items
+
+update:
+    redirect: maeld/catalog/items
+    redirectClose: maeld/catalog/items

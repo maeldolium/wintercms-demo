@@ -1,0 +1,31 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+list: $/maeld/catalog/models/item/columns.yaml
+
+modelClass: Maeld\Catalog\Models\Item
+
+title: Meubles du catalogue
+
+recordUrl: maeld/catalog/items/update/:id
+
+noRecordsMessage: backend::lang.list.no_records
+
+recordsPerPage: 25
+
+showSetup: true
+
+showSorting: true
+
+defaultSort:
+    column: sort_order
+    direction: asc
+
+showCheckboxes: true
+
+toolbar:
+    buttons: list_toolbar
+
+    search:
+        prompt: backend::lang.list.search_prompt

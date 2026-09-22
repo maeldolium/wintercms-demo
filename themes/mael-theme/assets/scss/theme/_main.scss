@@ -1141,3 +1141,257 @@ body {
     line-height: 1.7;
     color: $color-text-muted;
 }
+
+// =============================================================
+// Catalogue (meubles)
+// =============================================================
+$color-badge-stock-bg: #E8F5E4;
+$color-badge-stock-text: #3A7A28;
+$color-badge-stock-border: #B8DEB0;
+$color-badge-order-bg: #FFF8F0;
+
+.catalogitems-header {
+    background-color: $color-white;
+    border-bottom: 1px solid $color-border;
+    padding: 56px 0 44px;
+}
+
+.catalogitems-label {
+    margin: 0 0 12px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-primary;
+}
+
+.catalogitems-header-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.catalogitems-title {
+    margin: 0;
+    font-family: $font_0;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: $color-dark;
+}
+
+.catalogitems-intro {
+    margin: 0;
+    max-width: 380px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: $color-text-muted;
+}
+
+.catalogitems-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.catalogitems-filter {
+    background-color: $color-white;
+    border: 1.5px solid $color-timeline-line;
+    color: $color-text;
+    padding: 8px 18px;
+    font-family: $font_1;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+        border-color: $color-primary;
+        color: $color-primary;
+    }
+
+    &.active {
+        background-color: $color-primary;
+        border-color: $color-primary;
+        color: $color-white;
+    }
+}
+
+.catalogitems-body {
+    padding: 56px 0 100px;
+}
+
+.catalogitems-empty {
+    padding: 80px 0;
+    text-align: center;
+    color: $color-muted-light;
+    font-size: 14px;
+}
+
+.catalogitems-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.catalogitems-card {
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+
+    &.is-hidden {
+        display: none;
+    }
+
+    &:hover {
+        box-shadow: 0 12px 40px rgba(139, 94, 60, 0.12);
+        transform: translateY(-4px);
+    }
+}
+
+.catalogitems-card-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: $color-timeline-line;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+    }
+}
+
+.catalogitems-card:hover .catalogitems-card-image img {
+    transform: scale(1.05);
+}
+
+.catalogitems-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    border-radius: 999px;
+
+    &.catalogitems-badge--stock {
+        background-color: $color-badge-stock-bg;
+        color: $color-badge-stock-text;
+        border: 1px solid $color-badge-stock-border;
+    }
+
+    &.catalogitems-badge--order {
+        background-color: $color-badge-order-bg;
+        color: $color-primary;
+        border: 1px solid $color-accent;
+    }
+}
+
+.catalogitems-card-body {
+    padding: 22px;
+}
+
+.catalogitems-card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.catalogitems-name {
+    margin: 0;
+    font-family: $font_0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $color-dark;
+}
+
+.catalogitems-price {
+    font-size: 13px;
+    font-weight: 600;
+    color: $color-primary;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.catalogitems-meta {
+    margin: 0 0 10px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: $color-muted-light;
+}
+
+.catalogitems-description {
+    margin: 0 0 18px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: $color-text-muted;
+}
+
+.catalogitems-contact-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 11px;
+    background-color: transparent;
+    border: 1.5px solid $color-timeline-line;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: $font_1;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: $color-text;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus {
+        background-color: $color-primary;
+        border-color: $color-primary;
+        color: $color-white;
+    }
+}
+
+.catalogitems-cta {
+    margin-top: 72px;
+    padding: 56px 40px;
+    background-color: $color-surface;
+    border: 1px solid $color-timeline-line;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.catalogitems-cta-label {
+    margin: 0 0 12px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-primary;
+}
+
+.catalogitems-cta-title {
+    margin: 0 0 14px;
+    font-size: 2rem;
+    font-weight: 300;
+    color: $color-dark;
+}
+
+.catalogitems-cta-text {
+    max-width: 420px;
+    margin: 0 auto 28px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: $color-text-muted;
+}

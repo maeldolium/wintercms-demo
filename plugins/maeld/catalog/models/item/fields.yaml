@@ -1,0 +1,64 @@
+fields:
+    photo:
+        label: Photo
+        type: mediafinder
+        mode: image
+        span: left
+
+    name:
+        label: Nom du meuble
+        span: right
+        type: text
+
+    category:
+        label: Catégorie
+        type: dropdown
+        options: getCategoryOptions
+        span: left
+
+    material:
+        label: Matière
+        comment: "Ex. Chêne français, Noyer, Frêne..."
+        type: text
+        span: right
+
+    status:
+        label: Disponibilité
+        type: dropdown
+        options: getStatusOptions
+        default: order
+        span: left
+        comment: "Le prix affiche automatiquement « Sur demande » pour un projet unique."
+
+    price_mode:
+        label: Format du prix
+        type: dropdown
+        options: getPriceModeOptions
+        default: from
+        span: right
+        comment: "« À partir de » pour un prix variable, « / pièce » pour un prix fixe à l'unité."
+        trigger:
+            action: hide
+            field: status
+            condition: value[unique]
+
+    price_from:
+        label: "Prix (€)"
+        type: number
+        span: left
+        trigger:
+            action: hide
+            field: status
+            condition: value[unique]
+
+    is_active:
+        label: Visible dans le catalogue
+        type: switch
+        default: true
+        span: right
+
+    description:
+        label: Description
+        type: textarea
+        size: large
+        span: full

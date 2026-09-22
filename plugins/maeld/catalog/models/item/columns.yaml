@@ -1,0 +1,40 @@
+columns:
+    photo:
+        label: Photo
+        type: image
+        width: 50
+        height: 50
+        sortable: false
+
+    name:
+        label: Nom
+        searchable: true
+
+    category:
+        label: Catégorie
+        valueFrom: category_label
+        sortable: false
+
+    material:
+        label: Matière
+        searchable: true
+        invisible: true
+
+    status:
+        label: Disponibilité
+        valueFrom: status_label
+        sortable: false
+
+    price_from:
+        label: "Prix à partir de"
+        format: '%s €'
+
+    is_active:
+        label: Visible
+        type: switch
+        sortable: false
+
+    created_at:
+        label: Créé le
+        type: date
+        invisible: true

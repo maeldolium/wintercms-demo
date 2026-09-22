@@ -1,0 +1,51 @@
+fields:
+    contact_button_text:
+        label: Texte du bouton de contact
+        comment: Affiché sur chaque fiche meuble du catalogue.
+        type: text
+        default: 'Nous contacter'
+        span: left
+        tab: Contact
+
+    contact_button_url:
+        label: Lien du bouton de contact
+        type: text
+        default: '/contact-devis'
+        span: right
+        tab: Contact
+
+    cta_label:
+        label: Label
+        type: text
+        default: "Vous ne trouvez pas ce qu'il vous faut ?"
+        span: full
+        tab: 'Bloc de fin de page'
+
+    cta_title:
+        label: Titre
+        type: text
+        default: 'Nous construisons selon vos spécifications.'
+        span: full
+        tab: 'Bloc de fin de page'
+
+    cta_text:
+        label: Texte
+        type: textarea
+        size: small
+        default: "Décrivez votre projet et nous organiserons une consultation. Aucun plan n'est nécessaire pour commencer."
+        span: full
+        tab: 'Bloc de fin de page'
+
+    cta_button_text:
+        label: Texte du bouton
+        type: text
+        default: 'Lancer une commande'
+        span: left
+        tab: 'Bloc de fin de page'
+
+    cta_button_url:
+        label: Lien du bouton
+        type: text
+        default: '/contact-devis'
+        span: right
+        tab: 'Bloc de fin de page'

@@ -1,0 +1,12 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+title: Réorganiser les meubles
+
+nameFrom: name
+
+modelClass: Maeld\Catalog\Models\Item
+
+toolbar:
+    buttons: reorder_toolbar

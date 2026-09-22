@@ -1,0 +1,88 @@
+{% set items = __SELF__.items %}
+{% set categoryOptions = __SELF__.categoryOptions %}
+{% set label = __SELF__.property('label') %}
+{% set title = __SELF__.property('title') %}
+{% set intro = __SELF__.property('intro') %}
+
+<section class="catalogitems-area">
+    <div class="catalogitems-header">
+        <div class="container">
+            {% if label %}
+                <p class="catalogitems-label">{{ label }}</p>
+            {% endif %}
+
+            <div class="catalogitems-header-row">
+                {% if title %}
+                    <h1 class="catalogitems-title font-display">{{ title }}</h1>
+                {% endif %}
+                {% if intro %}
+                    <p class="catalogitems-intro">{{ intro }}</p>
+                {% endif %}
+            </div>
+
+            {% if categoryOptions %}
+                <div class="catalogitems-filters">
+                    <button type="button" class="catalogitems-filter active" data-filter="all">Tout</button>
+                    {% for value, label in categoryOptions %}
+                        <button type="button" class="catalogitems-filter" data-filter="{{ value }}">{{ label }}</button>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="container catalogitems-body">
+        {% if items|length %}
+            <div class="catalogitems-grid">
+                {% for item in items %}
+                    <article class="catalogitems-card" data-category="{{ item.category }}">
+                        <div class="catalogitems-card-image">
+                            {% if item.photo %}
+                                <img src="{{ item.photo | media }}" alt="{{ item.name }}">
+                            {% endif %}
+                            <span class="catalogitems-badge catalogitems-badge--{{ item.status == 'stock' ? 'stock' : 'order' }}">{{ item.status_label }}</span>
+                        </div>
+                        <div class="catalogitems-card-body">
+                            <div class="catalogitems-card-heading">
+                                <h3 class="catalogitems-name font-display">{{ item.name }}</h3>
+                                {% if item.status == 'unique' %}
+                                    <span class="catalogitems-price">Sur demande</span>
+                                {% elseif item.price_from %}
+                                    {% if item.price_mode == 'unit' %}
+                                        <span class="catalogitems-price">{{ item.price_from | number_format(0, ',', ' ') }} € / pièce</span>
+                                    {% else %}
+                                        <span class="catalogitems-price">À partir de {{ item.price_from | number_format(0, ',', ' ') }} €</span>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            {% if item.material %}
+                                <p class="catalogitems-meta">{{ item.material }}{% if item.category %} · {{ item.category_label }}{% endif %}</p>
+                            {% endif %}
+                            {% if item.description %}
+                                <p class="catalogitems-description">{{ item.description }}</p>
+                            {% endif %}
+                            <a href="{{ __SELF__.contactButtonUrl }}" class="catalogitems-contact-btn">{{ __SELF__.contactButtonText }}</a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+
+            <p class="catalogitems-empty catalogitems-empty-category" style="display: none;">Aucune pièce dans cette catégorie pour l'instant.</p>
+        {% else %}
+            <p class="catalogitems-empty">Aucun meuble n'est disponible dans le catalogue pour le moment.</p>
+        {% endif %}
+
+        <div class="catalogitems-cta">
+            {% if __SELF__.ctaLabel %}
+                <p class="catalogitems-cta-label">{{ __SELF__.ctaLabel }}</p>
+            {% endif %}
+            {% if __SELF__.ctaTitle %}
+                <h3 class="catalogitems-cta-title font-display">{{ __SELF__.ctaTitle }}</h3>
+            {% endif %}
+            {% if __SELF__.ctaText %}
+                <p class="catalogitems-cta-text">{{ __SELF__.ctaText }}</p>
+            {% endif %}
+            <a href="{{ __SELF__.ctaButtonUrl }}" class="btn btn-primary">{{ __SELF__.ctaButtonText }}</a>
+        </div>
+    </div>
+</section>

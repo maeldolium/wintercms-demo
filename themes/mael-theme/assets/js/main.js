@@ -18,6 +18,26 @@
 	toggleHeaderScrolled();
 
 
+	$('.catalogitems-filter').on('click', function() {
+		var filter = $(this).data('filter');
+
+		$('.catalogitems-filter').removeClass('active');
+		$(this).addClass('active');
+
+		var visibleCount = 0;
+
+		$('.catalogitems-card').each(function() {
+			var show = filter === 'all' || $(this).data('category') === filter;
+			$(this).toggleClass('is-hidden', !show);
+			if (show) {
+				visibleCount++;
+			}
+		});
+
+		$('.catalogitems-empty-category').toggle(visibleCount === 0);
+	});
+
+
 /*
    Carousel Slider
    ========================================================================== */

@@ -386,6 +386,29 @@ team:
             size: small
             span: full
 
+catalogitems:
+  name: Catalogue (meubles)
+  description: Catalog Items Section
+  icon: icon-th-large
+  fields:
+    section_catalogitems_section:
+      label: Catalogue Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_catalogitems_label:
+      label: Label
+      type: text
+      span: left
+    section_catalogitems_title:
+      label: Titre
+      type: text
+      span: right
+    section_catalogitems_description:
+      label: Description
+      type: textarea
+      size: small
+      span: full
+
 ctasimple:
   name: Bannière CTA simple
   description: Simple CTA Section

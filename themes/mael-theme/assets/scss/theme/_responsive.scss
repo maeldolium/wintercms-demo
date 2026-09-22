@@ -90,3 +90,19 @@
 		grid-template-columns: 1fr;
 	}
 }
+
+@media (max-width: 1024px) {
+	.catalogitems-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.catalogitems-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.catalogitems-header-row {
+		align-items: flex-start;
+	}
+}
