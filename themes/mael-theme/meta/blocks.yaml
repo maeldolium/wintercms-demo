@@ -409,6 +409,51 @@ catalogitems:
       size: small
       span: full
 
+contact:
+  name: Contact & Devis
+  description: Contact Section
+  icon: icon-envelope
+  fields:
+    section_contact_section:
+      label: Contact Section
+      type: section
+      cssClass: "p-a m-y control-scrollpanel"
+    section_contact_label:
+      label: Label
+      type: text
+      span: left
+    section_contact_title:
+      label: "Titre (le HTML est autorisé, ex. <br>, <em>...</em>)"
+      type: text
+      span: right
+    section_contact_description:
+      label: Description
+      type: textarea
+      size: small
+      span: full
+    section_contact_info:
+      type: repeater
+      prompt: Ajouter une information de contact
+      form:
+        fields:
+          section_contact_info_label:
+            label: Label (ex. Adresse, Téléphone)
+            type: text
+            span: left
+          section_contact_info_value:
+            label: "Valeur (le HTML est autorisé, ex. <br>)"
+            type: text
+            span: right
+          section_contact_info_url:
+            label: "Lien (optionnel, ex. tel:..., mailto:...)"
+            type: text
+            span: full
+    section_contact_note:
+      label: Encart mis en avant
+      type: textarea
+      size: small
+      span: full
+
 ctasimple:
   name: Bannière CTA simple
   description: Simple CTA Section

@@ -1395,3 +1395,202 @@ $color-badge-order-bg: #FFF8F0;
     line-height: 1.7;
     color: $color-text-muted;
 }
+
+// =============================================================
+// Contact & Devis
+// =============================================================
+.contact-header {
+    background-color: $color-white;
+    border-bottom: 1px solid $color-border;
+    padding: 56px 0 48px;
+}
+
+.contact-label {
+    margin: 0 0 12px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-primary;
+}
+
+.contact-title {
+    margin: 0 0 16px;
+    font-family: $font_0;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: $color-dark;
+
+    em {
+        color: $color-primary;
+        font-style: italic;
+    }
+}
+
+.contact-intro {
+    max-width: 420px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: $color-text-muted;
+}
+
+.contact-body {
+    padding: 72px 0 100px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 72px;
+    align-items: start;
+}
+
+.contact-info {
+    position: sticky;
+    top: 100px;
+}
+
+.contact-info-item {
+    margin-bottom: 28px;
+}
+
+.contact-info-label {
+    margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-primary;
+}
+
+.contact-info-value {
+    display: block;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: $color-text-dark;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+        color: $color-primary;
+    }
+}
+
+.contact-note {
+    padding: 18px 20px;
+    background-color: $color-surface;
+    border-left: 3px solid $color-primary;
+    border-radius: 6px;
+
+    p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.65;
+        color: $color-text;
+    }
+}
+
+.contact-form-wrap {
+    .alert {
+        border-radius: 6px;
+        border: none;
+        font-size: 14px;
+
+        &.alert-success {
+            background-color: $color-badge-stock-bg;
+            color: $color-badge-stock-text;
+        }
+
+        &.alert-danger {
+            background-color: #FBE9E7;
+            color: #B3441D;
+        }
+
+        h4 {
+            font-family: $font_0;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        p, ul {
+            margin: 0;
+        }
+    }
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.contact-field {
+    margin-bottom: 20px;
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        font-family: $font_1;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: $color-text;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px 16px;
+        font-family: $font_1;
+        font-size: 14px;
+        color: $color-dark;
+        background-color: $color-bg;
+        border: 1.5px solid $color-timeline-line;
+        border-radius: 6px;
+        outline: none;
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+
+        &:focus {
+            background-color: $color-white;
+            border-color: $color-primary;
+        }
+    }
+
+    select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238B7560' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        padding-right: 40px;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 140px;
+    }
+
+    input[type="file"] {
+        padding: 10px 12px;
+        background-color: $color-bg;
+    }
+}
+
+.contact-submit-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 8px;
+}
+
+.contact-submit-note {
+    margin: 0;
+    font-size: 12px;
+    color: $color-muted-light;
+}
+

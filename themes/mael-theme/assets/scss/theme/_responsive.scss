@@ -65,6 +65,19 @@
 		grid-template-columns: 1fr;
 	}
 
+	.contact-grid {
+		grid-template-columns: 1fr;
+		gap: 48px;
+	}
+
+	.contact-info {
+		position: static;
+	}
+
+	.contact-form-row {
+		grid-template-columns: 1fr;
+	}
+
 	.timeline-list::before {
 		display: none;
 	}

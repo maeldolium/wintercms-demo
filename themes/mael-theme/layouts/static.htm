@@ -8,6 +8,19 @@ useContent = 1
 default = 0
 
 [catalogItems]
+
+[filepondForm]
+mail_enabled = 1
+mail_recipients[] = "contact@atelierdumont.fr"
+mail_subject = "Nouvelle demande via le site - Atelier Dumont"
+uploader_enable = 1
+mail_uploads = 1
+reset_form = 1
+messages_success = "Merci, votre message a bien été envoyé. Nous vous répondrons dans les deux jours ouvrés."
+messages_errors = "Une erreur est survenue, merci de vérifier les champs et réessayer."
+rules[name] = "required"
+rules[email] = "required|email"
+rules[message] = "required"
 ==
 <!DOCTYPE html>
 <html lang="{{ this.theme.site_locale }}">
