@@ -8,6 +8,6 @@ form: config/fields.yaml
 require:
     - Winter.User
     - Winter.Pages
-    - Martin.Forms
     - Winter.SEO
-    - Maeld.Catalog
+    - Winter.Builder
+    - Martin.Forms
