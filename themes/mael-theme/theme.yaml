@@ -6,12 +6,8 @@ code: demo-theme
 authorCode: Dolium
 form: config/fields.yaml
 require:
-    - Rainlab.User
-    - Rainlab.Blog
-    - Rainlab.Pages
-    - Rainlab.Translate
-    - Rainlab.Mailchimp
-    - OFFLINE.SiteSearch
-    - Rahman.BlogTags
-    - Martin.Ssbuttons
-    - GrofGraf.ContactMe
+    - Winter.User
+    - Winter.Pages
+    - Martin.Forms
+    - Winter.SEO
+    - Maeld.Catalog
