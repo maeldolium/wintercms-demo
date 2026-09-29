@@ -17,23 +17,33 @@ function onStart()
     Meta::set('generator', $this->theme->site_name);
     Meta::set('og:site_name', $this->theme->site_name);
 
-    // Set with the correct `property` attribute (the component's own auto-detection uses `name`).
-    Meta::append(['property' => 'og:title', 'content' => $fullTitle]);
-    Meta::append(['property' => 'og:description', 'content' => $seoDescription]);
+    // Rendered with the `property` attribute by the partials/seotags/default.htm override.
+    Meta::set('og:title', $fullTitle);
+    Meta::set('description', $seoDescription);
+    Meta::set('og:description', $seoDescription);
+
+    // Link preview image when the demo URL is shared (social networks don't read AVIF).
+    // Setting the dimensions stops the seoTags component from resizing it.
+    Meta::set('og:image', $this->controller->themeUrl('assets/images/og-image.jpg'));
+    Meta::set('og:image:width', '1200');
+    Meta::set('og:image:height', '630');
+    Meta::set('og:image:type', 'image/jpeg');
+    Meta::set('og:image:alt', "Un artisan scie une planche dans l'atelier");
+
+    // Demo site for a fictional company: keep every page out of search engines.
+    // The header also covers crawlers that ignore the meta tag.
+    $this->controller->setResponseHeader('X-Robots-Tag', 'noindex, nofollow');
 
     $this['seo_full_title'] = $fullTitle;
-    $this['seo_description'] = $seoDescription;
-    $this['seo_robots'] = !empty($this->page->meta_nofollow) ? 'noindex, nofollow' : 'index, follow';
 }
 ?>
 ==
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{{ seo_description }}">
 <meta name="keywords" content="{{ this.theme.site_keywords }}">
 <meta name="author" content="{{ this.theme.site_author }}">
-<meta name="robots" content="{{ seo_robots }}">
+<meta name="robots" content="noindex, nofollow">
 <title>{{ seo_full_title }}</title>
 {% if this.theme.settings_favicon %}
 <link rel="icon" type="image/png" href="{{ this.theme.settings_favicon|media }}" />

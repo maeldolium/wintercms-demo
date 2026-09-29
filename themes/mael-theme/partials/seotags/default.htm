@@ -1,0 +1,18 @@
+{# Overrides Winter.SEO's seoTags template: Open Graph tags need the `property` attribute, not `name` #}
+{% for tagName, tagContent in __SELF__.getMetaTags() %}
+    {% if tagContent is iterable %}
+        <meta{% for attrName, attrValue in tagContent %} {{ attrName }}="{{ attrValue }}"{% endfor %}>
+    {% elseif tagName starts with 'og:' %}
+        <meta property="{{ tagName }}" content="{{ tagContent }}">
+    {% else %}
+        <meta name="{{ tagName }}" content="{{ tagContent }}">
+    {% endif %}
+{% endfor %}
+
+{% for tagName, tagContent in __SELF__.getLinkTags() %}
+    {% if tagContent is iterable %}
+        <link{% for attrName, attrValue in tagContent %} {{ attrName }}="{{ attrValue }}"{% endfor %}>
+    {% else %}
+        <link rel="{{ tagName }}" href="{{ tagContent }}">
+    {% endif %}
+{% endfor %}
