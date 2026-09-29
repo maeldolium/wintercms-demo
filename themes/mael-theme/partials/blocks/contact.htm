@@ -39,7 +39,7 @@ description = "Contact Section"
             </div>
 
             <div class="contact-form-wrap">
-                {{ form_ajax('filepondForm::onFormSubmit') }}
+                {{ form_ajax('filepondForm::onFormSubmit', { files: true }) }}
                     <div id="filepondForm_forms_flash"></div>
 
                     <div class="contact-form-row">
@@ -109,6 +109,13 @@ description = "Contact Section"
                             <input type="file" name="files" multiple>
                         </div>
                     {% endif %}
+
+                    <div class="contact-field contact-field-checkbox">
+                        <label class="contact-checkbox-label">
+                            <input type="checkbox" name="rgpd" value="1">
+                            <span>J'autorise Atelier Dumont à conserver les informations transmises pour me recontacter dans le cadre de ma demande. *</span>
+                        </label>
+                    </div>
 
                     <div class="contact-field">
                         {% partial 'filepondForm::recaptcha' %}

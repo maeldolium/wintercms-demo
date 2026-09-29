@@ -1580,6 +1580,31 @@ $color-badge-order-bg: #FFF8F0;
     }
 }
 
+.contact-field-checkbox {
+    margin-bottom: 8px;
+}
+
+.contact-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0;
+    font-family: $font_1;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color-text-muted;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        margin-top: 2px;
+        accent-color: $color-primary;
+    }
+}
+
 .contact-submit-row {
     display: flex;
     align-items: center;

@@ -1,5 +1,43 @@
 description = "Static Layout"
 
+[filepondForm]
+mail_enabled = 1
+mail_recipients[] = "contact@maeldolium.com"
+mail_subject = "Nouvelle demande via le site - Atelier Dumont"
+mail_resp_enabled = 1
+mail_resp_field = "email"
+mail_resp_from = "contact@maeldolium.com"
+mail_resp_name = "Atelier Dumont"
+mail_resp_subject = "Nous avons bien reçu votre message"
+uploader_enable = 1
+mail_uploads = 1
+reset_form = 1
+inline_errors = "disabled"
+messages_success = "Merci, votre message a bien été envoyé. Nous vous répondrons dans les deux jours ouvrés."
+messages_errors = "Une erreur est survenue, merci de vérifier les champs et réessayer."
+rules[name] = "required"
+rules[email] = "required|email"
+rules[phone] = "nullable|regex:/^[0-9\s+]+$/"
+rules[message] = "required"
+rules[rgpd] = "required"
+rules_messages[name.required] = "Vous devez renseigner votre nom"
+rules_messages[email.required] = "Vous devez renseigner votre adresse e-mail"
+rules_messages[email.email] = "Votre adresse e-mail est invalide"
+rules_messages[phone.regex] = "Le numéro de téléphone n'est pas valide"
+rules_messages[message.required] = "Vous devez décrire votre projet"
+rules_messages[rgpd.required] = "Vous devez autoriser Atelier Dumont à conserver les informations transmises"
+allowed_fields[] = "name"
+allowed_fields[] = "email"
+allowed_fields[] = "phone"
+allowed_fields[] = "project_type"
+allowed_fields[] = "budget"
+allowed_fields[] = "timeline"
+allowed_fields[] = "message"
+allowed_fields[] = "rgpd"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+emails_date_format = "Y-m-d"
+
 [session]
 security = "all"
 
@@ -8,19 +46,6 @@ useContent = 1
 default = 0
 
 [catalogItems]
-
-[filepondForm]
-mail_enabled = 1
-mail_recipients[] = "contact@atelierdumont.fr"
-mail_subject = "Nouvelle demande via le site - Atelier Dumont"
-uploader_enable = 1
-mail_uploads = 1
-reset_form = 1
-messages_success = "Merci, votre message a bien été envoyé. Nous vous répondrons dans les deux jours ouvrés."
-messages_errors = "Une erreur est survenue, merci de vérifier les champs et réessayer."
-rules[name] = "required"
-rules[email] = "required|email"
-rules[message] = "required"
 ==
 <!DOCTYPE html>
 <html lang="{{ this.theme.site_locale }}">
@@ -29,10 +54,10 @@ rules[message] = "required"
         {% partial "site/meta" %}
 		<!--Css -->
         {% partial "site/css" %}
-		
+
     </head><!--/#head-->
     <body class="page-{{ this.page.title }} layout-{{ this.page.layout }}">
-    
+
         <!--Google Analytics -->
         {{ this.theme.google_analytics|raw }}
 
@@ -40,12 +65,12 @@ rules[message] = "required"
             {% partial "site/top" %}
             {% partial "site/nav" %}
         </header><!--/#header-->
-        
+
         <!-- Repeater -->
         {repeater name="sections" groups="~/themes/mael-theme/meta/blocks.yaml" tab="Blocks"}
             {variable name="_dummy" type="text"}{/variable}
         {/repeater}
-        
+
         <!-- Render blocks -->
         {% for section in sections %}
             {% partial 'blocks/' ~ section._group data=section %}
@@ -64,16 +89,16 @@ rules[message] = "required"
         <footer>
         	{% partial "site/footer" %}
         </footer><!--/#footer-->
-        
+
         <!-- Copyright -->
         {% partial "site/copyright" %}
-    
+
         <!-- Scroll to top -->
         {% partial "site/scrolltop" %}
-        
+
         <!-- Loader -->
         {% partial "site/loader" %}
-    
+
         <!-- Scripts -->
         {% partial "site/scripts" %}
 
