@@ -1580,6 +1580,15 @@ $color-badge-order-bg: #FFF8F0;
     }
 }
 
+// Honeypot fields: moved off-screen rather than display:none, which some bots skip
+.contact-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .contact-field-checkbox {
     margin-bottom: 8px;
 }

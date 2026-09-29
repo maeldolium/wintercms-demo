@@ -42,6 +42,14 @@ description = "Contact Section"
                 {{ form_ajax('filepondForm::onFormSubmit', { files: true }) }}
                     <div id="filepondForm_forms_flash"></div>
 
+                    <!-- Honeypot: invisible to visitors and screen readers, only bots fill these in -->
+                    <div class="contact-hp" aria-hidden="true">
+                        <label for="contact-company-url">Site web de l'entreprise</label>
+                        <input type="text" id="contact-company-url" name="company_url" tabindex="-1" autocomplete="off">
+                        <label for="contact-middle-name">Deuxième prénom</label>
+                        <input type="text" id="contact-middle-name" name="middle_name" tabindex="-1" autocomplete="off">
+                    </div>
+
                     <div class="contact-form-row">
                         <div class="contact-field">
                             <label for="contact-name">Nom complet *</label>
