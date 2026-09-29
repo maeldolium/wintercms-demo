@@ -363,19 +363,4 @@ $('.video-popup').magnificPopup({
       return false;
     })
 
-
-/*
-   Page Loader
-   ========================================================================== */
-   $(window).on('load',function() {
-      "use strict";
-      $('#loader').fadeOut();
-    });
-
-
-
-
-
-
-
 }(jQuery));
