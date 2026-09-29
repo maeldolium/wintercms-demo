@@ -1,14 +1,24 @@
-title = "Error Page (500)"
+title = "Erreur technique"
 url = "/error"
 layout = "default"
 is_hidden = 0
-
-[viewBag]
-localeUrl[gr] = "/error-page-500"
+meta_description = "Une erreur technique empêche l'affichage de cette page."
+meta_nofollow = 1
 ==
-<section id="error" class="section text-center">
-    <h1>Ooops! An Error Occured.</h1>
-    <p>We're so sorry, the page you requested cannot be displayed due to an error.</p>
-    <p><small><em>Error code: 500</em></small></p>
-    <a href="{{ 'index'|staticPage }}" class="btn btn-common btn-lg" data-aos="zoom-in" data-aos-delay="300">GO BACK TO THE HOMEPAGE</a>
+<section class="error-area">
+    <div class="container">
+        <div class="error-content">
+            <p class="error-code font-display" aria-hidden="true">500</p>
+            <p class="error-label">Erreur 500</p>
+            <h1 class="error-title font-display">Un imprévu<br><em>sur l'établi.</em></h1>
+            <p class="error-text">Une erreur technique empêche l'affichage de cette page. Nous faisons le nécessaire : réessayez dans quelques instants.</p>
+            <div class="error-actions">
+                <a href="{{ 'index'|staticPage }}" class="btn btn-primary">Retour à l'accueil</a>
+                <a href="{{ 'contact-devis'|staticPage }}" class="error-link">
+                    Nous contacter
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
