@@ -8,5 +8,4 @@ form: config/fields.yaml
 require:
     - Winter.Pages
     - Winter.SEO
-    - Winter.Builder
     - Martin.Forms

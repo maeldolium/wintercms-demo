@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07e236bc055da08e68b141352f22fcd6",
+    "content-hash": "6f7b2a78583207f95c3b4420391ad7ad",
     "packages": [
         {
             "name": "assetic/framework",
@@ -6561,80 +6561,6 @@
             "time": "2026-08-19T21:55:46+00:00"
         },
         {
-            "name": "winter/wn-builder-plugin",
-            "version": "v2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wintercms/wn-builder-plugin.git",
-                "reference": "9f871561990d650848706f045c1d456ba37746ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/wn-builder-plugin/zipball/9f871561990d650848706f045c1d456ba37746ed",
-                "reference": "9f871561990d650848706f045c1d456ba37746ed",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "nikic/php-parser": "^5.5",
-                "php": ">=7.0"
-            },
-            "replace": {
-                "rainlab/builder-plugin": "~1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "winter-plugin",
-            "extra": {
-                "installer-name": "builder"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexey Bobkov",
-                    "email": "aleksey.bobkov@gmail.com",
-                    "role": "Original Author"
-                },
-                {
-                    "name": "Samuel Georges",
-                    "email": "daftspunky@gmail.com",
-                    "role": "Original Author"
-                },
-                {
-                    "name": "Winter CMS Maintainers",
-                    "homepage": "https://wintercms.com",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Builder plugin for Winter CMS",
-            "homepage": "https://github.com/wintercms/wn-builder-plugin",
-            "keywords": [
-                "builder",
-                "winter",
-                "wintercms"
-            ],
-            "support": {
-                "discord": "https://discord.gg/D5MFSPH6Ux",
-                "issues": "https://github.com/wintercms/wn-builder-plugin/issues",
-                "source": "https://github.com/wintercms/wn-builder-plugin"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/wintercms",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/wintercms",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2026-08-24T05:04:41+00:00"
-        },
-        {
             "name": "winter/wn-cms-module",
             "version": "v1.2.14",
             "source": {
@@ -6915,78 +6841,6 @@
                 }
             ],
             "time": "2026-08-14T20:40:43+00:00"
-        },
-        {
-            "name": "winter/wn-user-plugin",
-            "version": "v2.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wintercms/wn-user-plugin.git",
-                "reference": "c196430a2cfb98d1bb9f0769e4299a8b29ed1532"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/wn-user-plugin/zipball/c196430a2cfb98d1bb9f0769e4299a8b29ed1532",
-                "reference": "c196430a2cfb98d1bb9f0769e4299a8b29ed1532",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "winter/wn-backend-module": "^1.2.8 || dev-develop"
-            },
-            "replace": {
-                "rainlab/user-plugin": "~1.5"
-            },
-            "type": "winter-plugin",
-            "extra": {
-                "installer-name": "user"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexey Bobkov",
-                    "email": "aleksey.bobkov@gmail.com",
-                    "role": "Original Author"
-                },
-                {
-                    "name": "Samuel Georges",
-                    "email": "daftspunky@gmail.com",
-                    "role": "Original Author"
-                },
-                {
-                    "name": "Winter CMS Maintainers",
-                    "homepage": "https://wintercms.com",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "User plugin for Winter CMS",
-            "homepage": "https://github.com/wintercms/wn-user-plugin",
-            "keywords": [
-                "Authentication",
-                "plugin",
-                "user",
-                "winter",
-                "winter cms"
-            ],
-            "support": {
-                "discord": "https://discord.gg/D5MFSPH6Ux",
-                "issues": "https://github.com/wintercms/wn-user-plugin/issues",
-                "source": "https://github.com/wintercms/wn-user-plugin"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/wintercms",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/wintercms",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2026-08-26T23:04:39+00:00"
         }
     ],
     "packages-dev": [
@@ -9108,5 +8962,5 @@
         "php": ">=8.1"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
