@@ -54,7 +54,7 @@ default = 0
         {% partial "site/css" %}
 
     </head><!--/#head-->
-    <body class="page-{{ this.page.title }} layout-{{ this.page.layout }}">
+    <body class="page-{{ this.page.id }} layout-{{ this.page.layout }}">
 
         <!--Google Analytics -->
         {{ this.theme.google_analytics|raw }}
