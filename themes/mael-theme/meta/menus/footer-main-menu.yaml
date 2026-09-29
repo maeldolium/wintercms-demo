@@ -5,17 +5,8 @@ items:
         type: url
         url: /
         code: ''
-        replace: 0
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: Catalogue
-        nesting: 0
-        type: static-page
-        code: ''
-        reference: catalogue
+        reference: null
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -25,8 +16,23 @@ items:
         title: 'À propos'
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: a-propos
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Catalogue
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: catalogue
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -36,8 +42,10 @@ items:
         title: Contact
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: contact-devis
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -47,8 +55,10 @@ items:
         title: 'Mentions légales'
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: mentions-legales
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -58,8 +68,10 @@ items:
         title: 'Politique cookies'
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: politique-cookies
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
