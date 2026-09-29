@@ -9,7 +9,7 @@ return [
     | This parameter value can be overridden by the CMS back-end settings.
     |
     */
-    'activeTheme' => 'demo',
+    'activeTheme' => 'mael-theme',
     /*
     |--------------------------------------------------------------------------
     | Bleeding edge updates
