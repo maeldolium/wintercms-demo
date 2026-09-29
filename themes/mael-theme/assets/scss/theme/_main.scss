@@ -1694,11 +1694,25 @@ $color-badge-order-bg: #FFF8F0;
         }
     }
 
-    p {
+    h3 {
+        margin: 24px 0 8px;
+        font-family: $font_1;
+        font-size: 15px;
+        font-weight: 600;
+        color: $color-dark;
+    }
+
+    p,
+    li {
         margin: 0 0 8px;
         font-size: 15px;
         line-height: 1.7;
         color: $color-text;
+    }
+
+    ul {
+        margin: 0 0 8px;
+        padding-left: 20px;
     }
 
     a {
