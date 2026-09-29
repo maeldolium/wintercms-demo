@@ -122,6 +122,34 @@ body {
 }
 
 // =============================================================
+// Demo banner (top of header, every page)
+// =============================================================
+.demo-banner {
+    background-color: $color-dark;
+    color: $color-surface;
+    text-align: center;
+
+    p {
+        margin: 0;
+        padding: 8px 16px;
+        font-family: $font_1;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    a {
+        color: $color-accent;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+
+        &:hover,
+        &:focus {
+            color: $color-white;
+        }
+    }
+}
+
+// =============================================================
 // Header / navbar background
 // =============================================================
 #header-wrap {
