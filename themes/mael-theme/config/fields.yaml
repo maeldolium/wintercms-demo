@@ -434,16 +434,6 @@ tabs:
                 field: topbar_enable
                 condition: checked
                 
-        topbar_account:
-            tab: Top Bar
-            label: Account Login/Register
-            type: switch
-            default: true
-            trigger:
-                action: show
-                field: topbar_enable
-                condition: checked
-                
         topbar_language:
             tab: Top Bar
             label: Language Selector

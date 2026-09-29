@@ -6,7 +6,6 @@ code: demo-theme
 authorCode: Dolium
 form: config/fields.yaml
 require:
-    - Winter.User
     - Winter.Pages
     - Winter.SEO
     - Winter.Builder
