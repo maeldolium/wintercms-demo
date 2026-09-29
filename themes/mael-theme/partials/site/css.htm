@@ -48,42 +48,6 @@ description = "Css"
 {% endif %}
 {% endif %}
 
-<!-- Color SCSS -->
-{% if this.theme.styles_theme_color %}
-{% if this.theme.styles_theme_color == 'blue' %}
-<link href="{{ ['assets/scss/theme/color/_blue.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% if this.theme.styles_theme_color == 'lightblue' %}
-<link href="{{ ['assets/scss/theme/color/_lightblue.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% if this.theme.styles_theme_color == 'darkblue' %}
-<link href="{{ ['assets/scss/theme/color/_darkblue.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% if this.theme.styles_theme_color == 'green' %}
-<link href="{{ ['assets/scss/theme/color/_green.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% if this.theme.styles_theme_color == 'lightgreen' %}
-<link href="{{ ['assets/scss/theme/color/_lightgreen.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% if this.theme.styles_theme_color == 'yellow' %}
-<link href="{{ ['assets/scss/theme/color/_yellow.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% if this.theme.styles_theme_color == 'orange' %}
-<link href="{{ ['assets/scss/theme/color/_orange.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% if this.theme.styles_theme_color == 'red' %}
-<link href="{{ ['assets/scss/theme/color/_red.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% if this.theme.styles_theme_color == 'purple' %}
-<link href="{{ ['assets/scss/theme/color/_purple.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% if this.theme.styles_theme_color == 'custom' %}
-<link href="{{ ['assets/scss/theme/color/_custom.scss']|theme }}" rel="stylesheet">
-{% endif %}
-{% else %}
-<link href="{{ ['assets/scss/theme/color/_default.scss']|theme }}" rel="stylesheet">
-{% endif %}
-
 <!-- Core CSS -->
 {% styles %}
 

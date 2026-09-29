@@ -33,6 +33,15 @@ body {
     color: $color-text;
 }
 
+a {
+    color: $color-primary;
+
+    &:hover,
+    &:focus {
+        color: $color-primary-dark;
+    }
+}
+
 // =============================================================
 // Buttons (shared across blocks)
 // =============================================================
@@ -161,6 +170,21 @@ body {
     .navbar-nav .nav-link {
         color: #6B5A4A;
         transition: color 0.3s ease;
+
+        &:hover,
+        &:focus {
+            color: $color-primary;
+        }
+    }
+
+    .navbar-toggler {
+        padding: 6px 10px;
+        background: transparent;
+        border: 1px solid $color-border;
+        border-radius: 4px;
+        color: $color-dark;
+        font-size: 22px;
+        line-height: 1;
     }
 
     .navbar-nav .nav-item.active .nav-link {
@@ -185,6 +209,16 @@ body {
 
         .navbar-nav .nav-link {
             color: $color-white;
+
+            &:hover,
+            &:focus {
+                color: $color-accent;
+            }
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.45);
+            color: $color-white;
         }
 
         .navbar-nav .nav-item.active .nav-link {
@@ -201,6 +235,16 @@ body {
 
             .navbar-nav .nav-link {
                 color: #6B5A4A;
+
+                &:hover,
+                &:focus {
+                    color: $color-primary;
+                }
+            }
+
+            .navbar-toggler {
+                border-color: $color-border;
+                color: $color-dark;
             }
 
             .navbar-nav .nav-item.active .nav-link {
