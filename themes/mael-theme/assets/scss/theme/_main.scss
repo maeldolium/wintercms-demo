@@ -185,6 +185,16 @@ a {
         color: $color-dark;
         font-size: 22px;
         line-height: 1;
+
+        // Replace the browser's blue focus ring: none on click/tap, brand colour for keyboard users
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-primary;
+            outline-offset: 2px;
+        }
     }
 
     .navbar-nav .nav-item.active .nav-link {
@@ -219,6 +229,10 @@ a {
         .navbar-toggler {
             border-color: rgba(255, 255, 255, 0.45);
             color: $color-white;
+
+            &:focus-visible {
+                outline-color: $color-white;
+            }
         }
 
         .navbar-nav .nav-item.active .nav-link {
@@ -226,14 +240,17 @@ a {
             text-decoration-color: $color-white;
         }
 
-        &.header-scrolled {
+        &.header-scrolled,
+        &:has(.navbar-collapse.show),
+        &:has(.navbar-collapse.collapsing) {
             background-color: $color-bg;
 
             .navbar-brand-text .font-display {
                 color: $color-dark;
             }
 
-            .navbar-nav .nav-link {
+            // The "Contact & Devis" button keeps its own white-on-brown colours
+            .navbar-nav .nav-link:not([href$="/contact-devis"]) {
                 color: #6B5A4A;
 
                 &:hover,
@@ -245,6 +262,10 @@ a {
             .navbar-toggler {
                 border-color: $color-border;
                 color: $color-dark;
+
+                &:focus-visible {
+                    outline-color: $color-primary;
+                }
             }
 
             .navbar-nav .nav-item.active .nav-link {
