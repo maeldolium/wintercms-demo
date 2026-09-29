@@ -32,24 +32,20 @@ tabs:
             tab: Info
             label: Description
             type: textarea
-            default: "Winter CMS Theme."
+            default: "Menuiserie et mobilier sur mesure à Lyon. Chêne, noyer et savoir-faire artisanal transmis depuis trois générations."
 
         site_keywords:
             tab: Info
             label: Keywords
             type: taglist
             separator: comma
-            default: Multipurpose,Modular,Blog
-            options:
-                - Multipurpose
-                - Modular
-                - Blog
+            default: menuiserie,mobilier sur mesure,ébénisterie,artisan bois,Lyon
                 
         site_locale:
             tab: Info
             label: Website Locale
             type: text
-            default: en
+            default: fr
                 
         ####################################################
         # Tab: Fonts
@@ -147,266 +143,21 @@ tabs:
                 field: layout_container
                 condition: value[container]
                 
-        layout_blog_section:
-            tab: Layout
-            label: Blog Layout
-            type: section
-            
-        layout_blog_container:
-            tab: Layout
-            label: Blog Container Type
-            type: balloon-selector
-            default: container
-            options:
-                container: Container
-                container-fluid: Fluid Container
-
-        layout_blog_sidebar:
-            tab: Layout
-            label: Blog Layout
-            type: radio
-            default: right
-            options:
-                left: Left Sidebar
-                right: Right Sidebar
-                empty: No Sidebar
-                
-        layout_blog_main:
-            tab: Layout
-            label: Blog Main Area
-            type: radio
-            default: normal
-            options:
-                big: Big
-                normal: Normal
-                small: Small
-                tiny: Tiny
-            trigger:
-                action: hide
-                field: layout_blog_sidebar
-                condition: value[empty]
-            
-        layout_blogpost_section:
-            tab: Layout
-            label: Blog Post Layout
-            type: section
-            
-        layout_blogpost_container:
-            tab: Layout
-            label: Blog Post Container Type
-            type: balloon-selector
-            default: container
-            options:
-                container: Container
-                container-fluid: Fluid Container
-
-        layout_blogpost_sidebar:
-            tab: Layout
-            label: Blog Post Layout
-            type: radio
-            default: empty
-            options:
-                left: Left Sidebar
-                right: Right Sidebar
-                empty: No Sidebar
-                
-        layout_blogpost_main:
-            tab: Layout
-            label: Blog Post Main Area
-            type: radio
-            default: normal
-            options:
-                big: Big
-                normal: Normal
-                small: Small
-                tiny: Tiny
-            trigger:
-                action: hide
-                field: layout_blogpost_sidebar
-                condition: value[empty]
-            
         ####################################################
         # Tab: Settings
         ####################################################
         
-        settings_brand_section:
-            tab: Settings
-            label: Brand Settings
-            type: section
-            
-        settings_brand_type:
-            tab: Settings
-            label: Select Brand Type
-            type: balloon-selector
-            default: logo
-            span: left
-            options:
-                logo: Logo
-                text: Text
-                
-        settings_brand_logo:
-            tab: Settings
-            label: Brand Logo
-            type: mediafinder
-            mode: image
-            span: right
-            trigger:
-                action: show
-                field: settings_brand_type
-                condition: value[logo]
-                
-        settings_brand_text:
-            tab: Settings
-            label: Brand Name
-            type: text
-            span: right
-            trigger:
-                action: show
-                field: settings_brand_type
-                condition: value[text]
-                
         settings_other_section:
             tab: Settings
             label: Other Settings
             type: section
                 
-        settings_social:
-            tab: Settings
-            label: Social Links
-            type: switch
-            default: true
-            span: left
-            
         settings_favicon:
             tab: Settings
             label: Favicon Image
             type: mediafinder
             mode: image
             span: right
-                
-        settings_disqus:
-            tab: Settings
-            label: Disqus Comments
-            type: switch
-            default: false
-            span: left
-
-        settings_disqus_url:
-            tab: Settings
-            label: Enter your unique disqus URL
-            type: text
-            span: left
-            trigger:
-                action: show
-                field: settings_disqus
-                condition: checked
-                
-        settings_pageheader:
-            tab: Settings
-            label: Pageheader Image
-            type: mediafinder
-            imageWidth: 350
-            imageHeight: 200
-            mode: image
-            span: left
-
-        ####################################################
-        # Tab: Blog
-        ####################################################
-            
-        blog_post_section:
-            tab: Blog
-            label: Blog Post Settings
-            type: section
-            
-        blog_post_type:
-            tab: Blog
-            label: Blog Post Type
-            type: balloon-selector
-            default: type2
-            span: left
-            options:
-                type1: Type 1
-                type2: Type 2
-                
-        blog_post_transheader:
-            tab: Blog
-            label: Transparent Header
-            type: switch
-            default: false
-            span: left
-            trigger:
-                action: show
-                field: blog_post_type
-                condition: value[type2]
-            
-        blog_post_navigation:
-            tab: Blog
-            label: Next & Prev Blog Post
-            type: switch
-            default: true
-            span: left
-            
-        blog_post_gallery:
-            tab: Blog
-            label: Post Gallery
-            type: switch
-            default: true
-            span: left
-            
-        blog_post_similar:
-            tab: Blog
-            label: Similar Posts
-            type: switch
-            default: true
-            span: left
-            
-        blog_sidebar_section:
-            tab: Blog
-            label: Blog Sidebar Settings
-            type: section
-            
-        blog_sidebar_search:
-            tab: Blog
-            label: Sidebar Search
-            type: switch
-            default: true
-            span: left
-            
-        blog_sidebar_categories:
-            tab: Blog
-            label: Post Categories
-            type: switch
-            default: true
-            span: left
-            
-        blog_sidebar_popular:
-            tab: Blog
-            label: Popular Posts
-            type: switch
-            default: true
-            span: left
-            
-        blog_sidebar_tags:
-            tab: Blog
-            label: Post Tags
-            type: switch
-            default: true
-            span: left
-            
-        blog_sidebar_gallery:
-            tab: Blog
-            label: Sidebar Gallery
-            type: switch
-            default: true
-            span: left
-            
-        blog_sidebar_subscribe:
-            tab: Blog
-            label: Sidebar Subscribe
-            type: switch
-            default: true
-            span: left
                 
         ####################################################
         # Tab: Top Bar
@@ -424,26 +175,6 @@ tabs:
             default: true
             span: left
             
-        topbar_callus:
-            tab: Top Bar
-            label: Call Us Number
-            type: text
-            span: left
-            trigger:
-                action: show
-                field: topbar_enable
-                condition: checked
-                
-        topbar_language:
-            tab: Top Bar
-            label: Language Selector
-            type: switch
-            default: false
-            trigger:
-                action: show
-                field: topbar_enable
-                condition: checked
-                
         ####################################################
         # Tab: Footer
         ####################################################
@@ -470,13 +201,6 @@ tabs:
                         type: text
                         span: right
             
-        footer_subscribe:
-            tab: Footer
-            label: Subscribe Text
-            type: textarea
-            size: small
-            span: right
-
         footer_bio:
             tab: Footer
             label: Brand Bio
@@ -544,12 +268,6 @@ tabs:
             type: switch
             default: true
             
-        loader_js:
-            tab: Addons
-            label: Page Loader
-            type: switch
-            default: true
-
         parallax_js:
             tab: Addons
             label: Parallax Effect
@@ -561,56 +279,6 @@ tabs:
             label: Particles Effect
             type: switch
             default: true
-
-        ####################################################
-        # Tab: Styles
-        ####################################################
-        
-        styles_section:
-            tab: Styles
-            label: Styles
-            type: section
-
-        styles_theme_color:
-            tab: Styles
-            label: Theme Color
-            type: balloon-selector
-            default: blue
-            options:
-                blue: Blue
-                lightblue: Light Blue
-                darkblue: Dark Blue
-                green: Green
-                lightgreen: Light Green
-                yellow: Yellow
-                orange: Orange
-                red: Red
-                purple: Purple
-                custom: Custom
-
-        styles_primary_color:
-            tab: Styles
-            label: Primary Color
-            type: colorpicker
-            availableColors: ["#f44336","#9c27b0","#2196f3","#cddc39","#ffc107","#607d8b","#db4e22","#2590a7","#a5b423","#f8fb3a"]
-            default: "#ffc107"
-            assetVar: "theme-primary-color"
-            trigger:
-                action: show
-                field: styles_theme_color
-                condition: value[custom]
-                
-        styles_secontary_color:
-            tab: Styles
-            label: Secontary Color
-            type: colorpicker
-            availableColors: ["#f44336","#9c27b0","#2196f3","#cddc39","#ffc107","#607d8b","#db4e22","#2590a7","#a5b423","#f8fb3a"]
-            default: "#ffc107"
-            assetVar: "theme-secontary-color"
-            trigger:
-                action: show
-                field: styles_theme_color
-                condition: value[custom]
 
         ####################################################
         # Tab: Social
@@ -641,40 +309,6 @@ tabs:
                         placeholder: https://facebook.com/mypage
                         span: full
                         
-        ####################################################
-        # Tab: Gallery
-        ####################################################
-        
-        gallery_section:
-            tab: Gallery
-            label: Gallery
-            type: section
-        
-        gallery_images:
-            tab: Gallery
-            prompt: Add Gallery Image
-            type: repeater
-            form:
-                fields:
-                    gallery_image:
-                        label: Image
-                        type: mediafinder
-                        mode: image
-                        imageWidth: 350
-                        imageHeight: 200
-                        span: left
-                    gallery_thumb:
-                        label: Thumb Image
-                        type: mediafinder
-                        mode: image
-                        imageWidth: 200
-                        imageHeight: 200
-                        span: right
-                    gallery_title:
-                        label: Image Title
-                        type: text
-                        span: full
-
         ####################################################
         # Tab: Advanced
         ####################################################
