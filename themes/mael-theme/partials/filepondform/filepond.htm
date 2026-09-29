@@ -1,7 +1,7 @@
 {% if __SELF__.property('uploader_enable') == 1 %}
-<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-<script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
-<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<link href="{{ 'assets/vendor/filepond/filepond.min.css'|theme }}" rel="stylesheet">
+<script src="{{ 'assets/vendor/filepond/filepond-plugin-file-validate-size.min.js'|theme }}"></script>
+<script src="{{ 'assets/vendor/filepond/filepond.min.js'|theme }}"></script>
 
 <script>
     const inputElement = document.querySelector('input[type="file"]');
