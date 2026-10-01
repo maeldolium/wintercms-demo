@@ -28,6 +28,18 @@ class Plugin extends PluginBase
     }
 
     /**
+     * French templates for the contact form e-mails, replacing Martin.Forms' English
+     * defaults. They use their own layout so the footer doesn't credit "Winter CMS".
+     */
+    public function registerMailTemplates(): array
+    {
+        return [
+            'maeld.compat::mail.contact-notification',
+            'maeld.compat::mail.contact-autoresponse',
+        ];
+    }
+
+    /**
      * Martin.Forms builds its mail classes via App::makeWith() with a positional
      * (numerically indexed) parameters array, but Laravel's container only resolves
      * makeWith() parameters by name. On this Laravel version that throws an

@@ -1,0 +1,40 @@
+subject = "Nouvelle demande via le site - Atelier Dumont"
+layout = "maeld.compat::mail.layout"
+description = "Notification envoyée à l'atelier pour chaque demande du formulaire de contact"
+==
+{% set budgets = {'<1k': 'Moins de 1 000 €', '1-3k': '1 000 € – 3 000 €', '3-8k': '3 000 € – 8 000 €', '8-20k': '8 000 € – 20 000 €', '>20k': 'Plus de 20 000 €'} %}
+{% set timelines = {'urgent': 'Urgent (moins de 4 semaines)', '3m': 'Dans les 3 mois', '6m': 'Dans les 6 mois', 'flex': 'Pas de contrainte'} %}
+Nouvelle demande n° {{ id }}, reçue le {{ date|date('d/m/Y à H:i', 'Europe/Paris') }}
+
+Nom : {{ data.name }}
+E-mail : {{ data.email }}
+Téléphone : {{ data.phone ?: 'Non renseigné' }}
+Type de projet : {{ data.project_type ?: 'Non précisé' }}
+Budget : {{ budgets[data.budget] ?? 'Pas encore défini' }}
+Délai : {{ timelines[data.timeline] ?? 'Flexible' }}
+
+Message :
+{{ data.message }}
+
+Consentement RGPD : {{ data.rgpd ? 'oui' : 'non' }}
+Adresse IP : {{ ip }}
+==
+{% set budgets = {'<1k': 'Moins de 1 000 €', '1-3k': '1 000 € – 3 000 €', '3-8k': '3 000 € – 8 000 €', '8-20k': '8 000 € – 20 000 €', '>20k': 'Plus de 20 000 €'} %}
+{% set timelines = {'urgent': 'Urgent (moins de 4 semaines)', '3m': 'Dans les 3 mois', '6m': 'Dans les 6 mois', 'flex': 'Pas de contrainte'} %}
+<h1>Nouvelle demande de contact</h1>
+<p>Demande n° {{ id }}, reçue le {{ date|date('d/m/Y à H:i', 'Europe/Paris') }}.</p>
+
+<table width="100%" cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-bottom: 24px;">
+    <tr><td width="35%" style="border-bottom: 1px solid #EDE8DF; font-weight: bold;">Nom</td><td style="border-bottom: 1px solid #EDE8DF;">{{ data.name|e }}</td></tr>
+    <tr><td style="border-bottom: 1px solid #EDE8DF; font-weight: bold;">E-mail</td><td style="border-bottom: 1px solid #EDE8DF;"><a href="mailto:{{ data.email|e('url') }}">{{ data.email|e }}</a></td></tr>
+    <tr><td style="border-bottom: 1px solid #EDE8DF; font-weight: bold;">Téléphone</td><td style="border-bottom: 1px solid #EDE8DF;">{{ data.phone ? data.phone|e : 'Non renseigné' }}</td></tr>
+    <tr><td style="border-bottom: 1px solid #EDE8DF; font-weight: bold;">Type de projet</td><td style="border-bottom: 1px solid #EDE8DF;">{{ data.project_type ? data.project_type|e : 'Non précisé' }}</td></tr>
+    <tr><td style="border-bottom: 1px solid #EDE8DF; font-weight: bold;">Budget</td><td style="border-bottom: 1px solid #EDE8DF;">{{ budgets[data.budget] ?? 'Pas encore défini' }}</td></tr>
+    <tr><td style="border-bottom: 1px solid #EDE8DF; font-weight: bold;">Délai</td><td style="border-bottom: 1px solid #EDE8DF;">{{ timelines[data.timeline] ?? 'Flexible' }}</td></tr>
+</table>
+
+<p><strong>Message</strong></p>
+<p>{{ data.message|e|nl2br }}</p>
+
+<p style="font-size: 12px; color: #8B7560;">Consentement RGPD : {{ data.rgpd ? 'oui' : 'non' }} · Adresse IP : {{ ip|e }}<br>
+Les fichiers joints au formulaire, s'il y en a, sont en pièces jointes de cet e-mail.</p>
