@@ -4,6 +4,18 @@ define('LARAVEL_START', microtime(true));
 
 /*
 |--------------------------------------------------------------------------
+| Register Host Compatibility Replacements
+|--------------------------------------------------------------------------
+|
+| Declares harmless replacements for PHP functions some hosts disable,
+| before any code that relies on them is loaded.
+|
+*/
+
+require __DIR__.'/host-compat.php';
+
+/*
+|--------------------------------------------------------------------------
 | Register Core Helpers
 |--------------------------------------------------------------------------
 |
