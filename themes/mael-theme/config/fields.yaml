@@ -22,6 +22,13 @@ tabs:
             type: text
             default: "Maël Dolium"
 
+        site_author_url:
+            tab: Info
+            label: Author profile URL
+            comment: Linked from the author's name in the copyright bar
+            type: text
+            default: "https://www.malt.fr/profile/maeldolium"
+
         site_url:
             tab: Info
             label: URL
