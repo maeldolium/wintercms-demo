@@ -162,10 +162,17 @@ a {
 // Header / navbar background
 // =============================================================
 #header-wrap {
-    position: relative;
-    z-index: 10;
+    // Stays at the top of the screen on every page (the home page overrides this with
+    // position: fixed, so the header can sit transparently over the carousel)
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: $color-bg;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &.header-scrolled {
+        box-shadow: 0 1px 0 $color-border;
+    }
 
     .navbar-nav .nav-link {
         color: #6B5A4A;
