@@ -1,5 +1,12 @@
 <?php
 
+// SQLite path: relative paths resolve from the project root, absolute paths
+// (Unix "/..." or Windows "C:\...") are used as-is.
+$sqlitePath = env('DB_DATABASE', 'storage/database.sqlite');
+if (!preg_match('~^(/|[A-Za-z]:[\\\\/])~', $sqlitePath)) {
+    $sqlitePath = base_path($sqlitePath);
+}
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +35,7 @@ return [
     */
     'connections' => [
         'sqlite' => [
-            'database' => base_path(env('DB_DATABASE', 'storage/database.sqlite')),
+            'database' => $sqlitePath,
             'driver' => 'sqlite',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
             'prefix' => '',
