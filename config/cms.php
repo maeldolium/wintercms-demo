@@ -68,7 +68,7 @@ return [
     | dates displayed in the back-end will be converted to this timezone.
     |
     */
-    'backendTimezone' => 'UTC',
+    'backendTimezone' => 'Europe/Paris',
     /*
     |--------------------------------------------------------------------------
     | Back-end Skin

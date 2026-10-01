@@ -203,7 +203,7 @@ return [
     | Backend\Models\Preference->getLocaleOptions()
     |
     */
-    'locale' => 'en',
+    'locale' => 'fr',
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
